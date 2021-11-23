@@ -1,0 +1,69 @@
+<div class="col-sm-12">
+    <div class="card  bg-info">
+        <div class0="">
+
+            <div class="">
+                <div class="col-lg-12">
+                    <h3 class="card-header"><b>VER REGISTROS</b></h3>
+                </div>
+            </div>
+            <div class="container row">
+                <div class="col-md-7">
+                    <form  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+                        <label for="">Buscar Registro de Estudiante</label>
+                        <div class=" form-group input-group">
+                            <input type="text" class="form-control" name="document" placeholder="Documento">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
+                                </button>
+                                
+                                <button class="btn btn-danger" onclick="setTimeout(function(){location.reload();}, 3000);">Refresh</button>
+                            
+                            
+                            </span>
+                        </div>
+                </div>
+            
+                        
+                        <?php
+    
+                            if(!empty($_POST['document'])){
+                                require '../logica/conexion.php';
+    
+                                $document = $_POST['document'];
+                                
+                                $query = "SELECT * FROM usuarios WHERE document = '$document'";
+                                $consulta = mysqli_query($conexion,$query);
+                                $array = mysqli_fetch_array($consulta);
+    
+                                
+                                //echo $array[0];
+                                
+                                if(!$array){
+                                    echo "</br><div class='col-md-12 alert alert-danger'>
+                                               El Usuario no existe aun
+                                            </div>"; 
+                                }else if ($array){
+                                    $id = $array[0];
+                                    $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation
+                                    FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id";
+                                    
+                                    $consulta2 = mysqli_query($conexion,$query2);
+    
+                                    require 'partials/_view_registers_table.php';
+                                    
+                                    
+                                    
+                                }
+                            }
+                            
+                        ?>
+                    </form>
+                </div>
+                <div class="col-md-3" hidden>p</div>
+                <div class ="col-md-3" hidden >p</div>
+            </div>
+        </div>
+        
+    </div>
+</div>
