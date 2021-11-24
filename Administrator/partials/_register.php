@@ -86,10 +86,10 @@
                                         $pos2 = "INTERNO";
                                         $pos3 = "ESTUDIANTE";
                                     }
-                                    else{
-                                        $pos1 = $array[8];
-                                        $pos2 = "";
-                                        $pos3 = "";
+                                    else if($array[8] == ''){
+                                        $pos1 = "ESTUDIANTE";
+                                        $pos2 = "INTERNO";
+                                        $pos3 = "RESIDENTE";
                                     }
                                 }
                                 if($array[9] != ""){
@@ -113,11 +113,11 @@
                                         $for2 = "TECNICO";
                                         $for3 = "TECNOLOGO";
                                         $for4 = "PROFESIONAL";
-                                    }else{
-                                        $for1 = "";
-                                        $for2 = "";
-                                        $for3 = "";
-                                        $for4 = "";
+                                    }else if($array[9] == ''){
+                                        $for1 = "TECNICO";
+                                        $for2 = "TECNOLOGO";
+                                        $for3 = "PROFESIONAL";
+                                        $for4 = "POSTGRADO";
                                     }
                                 }
 
@@ -132,11 +132,6 @@
                                     $res1 = "NO";
                                     $res2 = "SI";
                                 }
-                                else{
-                                    $res1 = "";
-                                    $res2 = "";
-                                }
-
                                 
                                 
                                 echo"<div class='card-body '>
@@ -208,16 +203,16 @@
                                                     
                                                     
                                                 </div>
-                                                <div class=''>
+                                                
+                                                <div class='form-group '>
                                                     <b>Anexo:
                                                     <select class='form-control' name='anexo'>
                                                         <option  value='$res1' selected='selected' >$res1</option>
                                                         <option  value='$res2' >$res2</option>
                                                     </select>
                                                 </div>
-                                                
                                             </div>
-                                            <div class='panel-footer'>
+                                            <div class='mt-2 panel-footer'>
                                                 <button type='submit' name='actualizar' class='btn btn-success'>Actualizar</button>
                                             </div> </br>
                                         </form>   

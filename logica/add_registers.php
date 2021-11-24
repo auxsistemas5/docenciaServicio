@@ -8,21 +8,30 @@
     $service = $_POST['id_service'];
     $teacher = strtoupper($_POST['teacher']);
     $type = strtoupper($_POST['type_teacher']);
-    $observations = strtoupper($_POST['observations']);
+    $observations = strtoupper($_POST['observation']);
 
     if($_POST['finish_date'] == ""){
         $finish = "";
     }
 
+    if($_POST['admision_date'] == ""){
+        $admission = "";
+    }
+
+    if($_POST['type_teacher'] == ""){
+        $type = "";
+    }
+
+
     if($_POST['teacher'] == ""){
         $teacher = "";
     }
-    if($_POST['observations'] == ""){
+    if($_POST['observation'] == ""){
         $observations = "";
     }
 
 
-    $consult = "INSERT INTO registro(id_user ,admission_date ,finish_date ,id_program ,id_service ,teacher,type_teacher,observations) VALUES ('$id',
+    $consult = "INSERT INTO registro(id_user ,admission_date ,finish_date ,id_program ,id_service ,teacher,type_teacher,observation) VALUES ('$id',
                     '$admission',
                     '$finish',
                     '$program',

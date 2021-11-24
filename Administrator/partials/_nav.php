@@ -3,6 +3,25 @@
 			<div class="loader-fill"></div>
 		</div>
 	</div>
+	<div class="pc-mob-header pc-header">
+		<div class="pcm-logo">
+			<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+		</div>
+		<div class="pcm-toolbar">
+			<a href="#!" class="pc-head-link" id="mobile-collapse">
+				<div class="hamburger hamburger--arrowturn">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<!-- <i data-feather="menu"></i> -->
+			</a>
+			
+			<a href="#!" class="pc-head-link" id="header-collapse">
+				<i data-feather="more-vertical">ADMINISTRADOR</i>
+			</a>
+		</div>
+	</div>
 	<!-- [ Pre-loader ] End -->
 	<!-- [ Mobile header ] start -->
 	
@@ -39,6 +58,9 @@
 							
 						</ul>
 					</li>
+					<li class="pc-item">
+						<a href="register_teachers.php" class="pc-link "><span class="pc-micon"><i data-feather="user"></i></span><span class="pc-mtext">Docentes</span></a>
+					</li>
                     
 					
 
@@ -65,14 +87,10 @@
 								<span class="user-desc">Administrador</span>
 							</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-right pc-h-dropdown">
-							
-							
-							<a href="../logica/salir.php" class="dropdown-item">
-								<i data-feather="power"></i>
-								<span>Salir</span>
-							</a>
-						</div>
+						<a href="../logica/salir.php" class="dropdown-item">
+							<i data-feather="power"></i>
+							<span>Salir</span>
+						</a>			
 					</li>
 				</ul>
 			</div>

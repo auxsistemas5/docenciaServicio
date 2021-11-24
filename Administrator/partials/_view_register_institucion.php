@@ -6,7 +6,7 @@
 
 
 <div class="col-sm-12">
-    <div class="card  bg-info">
+    <div class="card  bg-info col-md-12">
         <div class0="">
 
             <div class="">
@@ -14,8 +14,8 @@
                     <h3 class="card-header"><b>VER INSTITUCIONES</b></h3>
                 </div>
             </div>
-            <div class="container row">
-                <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12 offset-md">
                     <form  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                         <div class="container mt-2">
                             <label for="">Buscar Datos de la Institucion</label>
@@ -32,7 +32,7 @@
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
                                     </button>        
-                                    <a class="btn btn-danger" href="view_registers_institution.php">Refresh</a>         
+                                    
                                 </span>
                             </div>
                         </div>
@@ -60,12 +60,12 @@
                         if($res > 0){
                             echo "
                             <div class='col-sm-12'>
-                                <div class='card mt-3'>
+                                <div class='card mt-3 '>
                                     <div class='card-header'>
                                         <h4>INFORMACION DE LA INSTITUCION</h4>
                                     </div>
                                     <div class='card-body'>
-                                        <div class=' col-md-12'>
+                                        <div class=' '>
                                             <form action='../logica/update_institution.php' method='POST'>
                                                 <div class='row'>
                                                     <input name='id' value='$res[0]' hidden>

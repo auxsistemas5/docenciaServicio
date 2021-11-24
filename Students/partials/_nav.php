@@ -1,8 +1,27 @@
 <div class="loader-bg">
-		<div class="loader-track">
-			<div class="loader-fill"></div>
-		</div>
+	<div class="loader-track">
+		<div class="loader-fill"></div>
 	</div>
+</div>
+<div class="pc-mob-header pc-header">
+	<div class="pcm-logo">
+		<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+	</div>
+	<div class="pcm-toolbar">
+		<a href="#!" class="pc-head-link" id="mobile-collapse">
+			<div class="hamburger hamburger--arrowturn">
+				<div class="hamburger-box">
+					<div class="hamburger-inner"></div>
+				</div>
+			</div>
+			<!-- <i data-feather="menu"></i> -->
+		</a>
+		
+		<a href="#!" class="pc-head-link" id="header-collapse">
+			<i data-feather="more-vertical">ESTUDIANTE</i>
+		</a>
+	</div>
+</div>
 	<!-- [ Pre-loader ] End -->
 	<!-- [ Mobile header ] start -->
 	
@@ -37,7 +56,7 @@
 	<header class="pc-header ">
 		<div class="header-wrapper">
             <div class="mt-2 mr-auto pc-mob-drp">
-                <img src="../resources/logo 2.jpeg" width="200" height="50">
+                <img src="../resources/logo5.png" width="250" height="60">
             </div>
 			<div class="ml-auto">
 				<ul class="list-unstyled">
@@ -50,14 +69,12 @@
 								<span class="user-desc">Estudiante</span>
 							</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-right pc-h-dropdown">
-							
-							
-							<a href="../logica/salir.php" class="dropdown-item">
-								<i data-feather="power"></i>
-								<span>Salir</span>
-							</a>
-						</div>
+						
+						<a href="../logica/salir.php" class="dropdown-item">
+							<i data-feather="power"></i>
+							<span>Salir</span>
+						</a>
+						
 					</li>
 				</ul>
 			</div>

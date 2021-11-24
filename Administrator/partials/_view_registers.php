@@ -1,16 +1,16 @@
 <div class="col-sm-12">
-    <div class="card  bg-info">
-        <div class0="">
+    <div class="card  bg-info ">
+        <div class="">
 
             <div class="">
-                <div class="col-lg-12">
+                <div class="">
                     <h3 class="card-header"><b>VER REGISTROS</b></h3>
                 </div>
             </div>
-            <div class="container row">
-                <div class="col-md-7">
-                    <form  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
-                        <label for="">Buscar Registro de Estudiante</label>
+            <div class=" row">
+                <div class="col-md-12">
+                    <form class="col-md-12 offset-md"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+                        <label for="container">Buscar Registro de Estudiante</label>
                         <div class=" form-group input-group">
                             <input type="text" class="form-control" name="document" placeholder="Documento">
                             <span class="input-group-btn">
@@ -22,7 +22,7 @@
                             
                             </span>
                         </div>
-                </div>
+                
             
                         
                         <?php

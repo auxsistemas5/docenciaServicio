@@ -16,12 +16,12 @@
                 </div>
             </div>
             <div class="container row">
-                <div class="col-md-8">
+                <div class="col-md-12 ">
                     <form  action="../logica/create_pdf_students_active.php" method="POST" target="_blank">
-                        <div class="container mt-2">
+                        <div class="col-md-12 offset-md mt-2">
                             <label for="">Generar visual de Estudiantes activos por Institucion</label>
-                            <div class=" form-group input-group">
-                                <Select name="id" class="form-control form-select">
+                            <div class="form-group input-group">
+                                <Select name="id" class="container form-control form-select">
                                 <?php 
                                 while($mostrar = mysqli_fetch_array($execute)){
                                 ?>
@@ -32,8 +32,7 @@
                                 </Select>
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-                                    </button> 
-                                    <a class="btn btn-danger" href="dashboard.php">Refresh</a>          
+                                    </button>        
                                 </span>
                             </div>
                         </div>

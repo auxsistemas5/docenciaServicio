@@ -11,7 +11,7 @@
 ?>
 
 <div class='col-lg-12'>
-    <div class='card  bg-light '>
+    <div class='card  bg-light col-md-12'>
         <div class='card-header'>
             <h4>DOCUMENTOS</h4>
         </div>

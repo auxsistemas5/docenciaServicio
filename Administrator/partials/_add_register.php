@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="">Observaciones</label>
-                                    <input type="text" name="observations" class="form-control">
+                                    <input type="text" name="observation" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-2">
