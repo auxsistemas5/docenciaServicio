@@ -74,7 +74,7 @@
 	<header class="pc-header ">
 		<div class="header-wrapper">
             <div class="mt-2 mr-auto pc-mob-drp">
-                <img src="../resources/logo 2.jpeg" width="200" height="50">
+                <img src="../resources/hmfs.png" width="210" height="50">
             </div>
 			<div class="ml-auto">
 				<ul class="list-unstyled">

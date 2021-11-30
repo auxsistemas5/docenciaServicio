@@ -14,19 +14,17 @@ $query2 = "SELECT * FROM administrador WHERE document = '$document' AND password
 $consulta2 = mysqli_query($conexion,$query2);
 $array2 = mysqli_fetch_array($consulta2);
 
-if($array > 0 ){
+
+if($array > 0){
     $_SESSION['username'] = $array[1];
     $_SESSION['document'] = $array[2];
     $_SESSION['type_user'] = $array[4];
     $_SESSION['state'] = $array[5];
     
-    if($_SESSION['state'] == 1){
+    if($array[5] != 0){
         echo '<script language="javascript">alert("Ingreso con Exito");window.location.href="../Students/dashboard.php"</script>';
-    }else if($_SESSION['state'] == 0){
-        
-        echo '<script language="javascript">alert("Error deshabilitado);window.location.href="../index.php"</script>';
     }else{
-        echo '<script language="javascript">alert("Error deshabilitado);window.location.href="../index.php"</script>';
+        echo '<script language="javascript">alert("Error deshabilitado parce que su usuario esta desabilitado);window.location.href="../index.php"</script>';
     }
 
 }else if ($array2 > 0){
@@ -42,7 +40,10 @@ if($array > 0 ){
         echo '<script language="javascript">alert("Usuario Deshabilitado");window.location.href="../index.php"</script>';
     }
 }else{
-    echo '<script language="javascript">alert("Error de autentificacion, Verifique Nuevamente");window.location.href="../index.php"</script>';
+    echo '<script language="javascript">alert("Error, no se pudo acceder ");window.location.href="../index.php"</script>';
+
 }
+
+
 
 ?>

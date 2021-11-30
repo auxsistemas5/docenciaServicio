@@ -43,22 +43,27 @@
                                     echo "</br><div class='col-md-12 alert alert-danger'>
                                                El Usuario no existe aun
                                             </div>"; 
+                                    $consulta2 = "";
                                 }else if ($array){
                                     $id = $array[0];
-                                    $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation
-                                    FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id";
-                                    
+                                    $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation,registro.anulated
+                                    FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id AND registro.anulated = 0";
+
+
                                     $consulta2 = mysqli_query($conexion,$query2);
-    
+                                    
+                                }
+                                echo "</form>";
+                                if($consulta2){
                                     require 'partials/_view_registers_table.php';
-                                    
-                                    
-                                    
+                                }else {
+                                    $consulta2 = "";
                                 }
                             }
                             
+                        
+                        
                         ?>
-                    </form>
                 </div>
                 <div class="col-md-3" hidden>p</div>
                 <div class ="col-md-3" hidden >p</div>

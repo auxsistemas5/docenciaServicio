@@ -8,13 +8,13 @@
     $service = $_POST['id_service'];
     $teacher = strtoupper($_POST['teacher']);
     $type = strtoupper($_POST['type_teacher']);
-    $observations = strtoupper($_POST['observation']);
+    $observation = strtoupper($_POST['observation']);
 
     if($_POST['finish_date'] == ""){
         $finish = "";
     }
 
-    if($_POST['admision_date'] == ""){
+    if($_POST['admission_date'] == ""){
         $admission = "";
     }
 
@@ -27,7 +27,7 @@
         $teacher = "";
     }
     if($_POST['observation'] == ""){
-        $observations = "";
+        $observation = "";
     }
 
 
@@ -38,7 +38,7 @@
                     '$service',
                     '$teacher',
                     '$type',
-                    '$observations'
+                    '$observation'
                         )";
 
     $ejecutar = mysqli_query($conexion,$consult);

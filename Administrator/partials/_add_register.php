@@ -1,3 +1,11 @@
+<?php
+    require '../logica/conexion.php';
+
+    $sqlT = "SELECT id,name FROM docentes";
+    $consT = mysqli_query($conexion,$sqlT);
+
+?>
+
 <div class="container">
 
     <div class='card card-danger'>
@@ -47,7 +55,20 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="">Docente:</label>
-                                <input type="text" name="teacher" class="form-control">
+                                <select class='form-control form-select' name ='teacher'>
+                                    <option>Seleccione</option> 
+                                    <?php
+                                    
+        
+                                        while($mostrarT = mysqli_fetch_array($consT)){
+                                        ?>   
+                                            <option value="<?php echo $mostrarT[1]?>"><?php echo $mostrarT[1]?></option>
+                                        <?php
+                                        }
+                                        
+                                    ?>
+                                    .
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -60,7 +81,7 @@
                                         <option value="AGREMIADO-PROENSALUD">AGREMIADO-PROENSALUD</option>
                                         <option value="AGREMIADO-THAUS">AGREMIADO-THAUS</option>
                                         <option value="VINCULADO">VINCULADO</option>
-                                        <option value="EXTERNO IE'S">EXTERNO IE'S</option>
+                                        <option value="EXTERNO IES">EXTERNO IE'S</option>
                                 </select>
                             </div>
                             <div class="col-md-4">

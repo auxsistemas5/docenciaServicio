@@ -37,6 +37,65 @@ var ins12 = document.getElementById("num_institution12").value;
 var name13 = document.getElementById("name_institution13").value;
 var ins13 = document.getElementById("num_institution13").value;
 
+//RECIBE LOS DATOS DEL GRAFICO DE ESTUDIANTES RECIBIDOS POR MES//
+
+var month1 = document.getElementById("mon1").value;
+var month2 = document.getElementById("mon2").value;
+var month3 = document.getElementById("mon3").value;
+var month4 = document.getElementById("mon4").value;
+var month5 = document.getElementById("mon5").value;
+var month6 = document.getElementById("mon6").value;
+var month7 = document.getElementById("mon7").value;
+var month8 = document.getElementById("mon8").value;
+var month9 = document.getElementById("mon9").value;
+var month10 = document.getElementById("mon10").value;
+var month11 = document.getElementById("mon11").value;
+
+//RECIBE DATOS DEL GRAFICO DE INGRESADOS POR servicio//
+var pro1 = document.getElementById("program1").value;
+var pro2 = document.getElementById("program2").value;
+var pro3 = document.getElementById("program3").value;
+var pro4 = document.getElementById("program4").value;
+var pro6 = document.getElementById("program6").value;
+var pro7 = document.getElementById("program7").value;
+var pro9 = document.getElementById("program9").value;
+var pro10 = document.getElementById("program10").value;
+var pro11 = document.getElementById("program11").value;
+var pro12= document.getElementById("program12").value;
+var pro13= document.getElementById("program13").value;
+var pro14 = document.getElementById("program14").value;
+var pro15 = document.getElementById("program15").value;
+var pro16 = document.getElementById("program16").value;
+var pro17= document.getElementById("program17").value;
+var pro18= document.getElementById("program18").value;
+var pro19 = document.getElementById("program19").value;
+var pro20 = document.getElementById("program20").value;
+var pro21 = document.getElementById("program21").value;
+var pro22 = document.getElementById("program22").value;
+var pro23 = document.getElementById("program23").value;
+//se muestran los programas
+var ps1 = document.getElementById("prog1").value;
+var ps2 = document.getElementById("prog2").value;
+var ps3 = document.getElementById("prog3").value;
+var ps4 = document.getElementById("prog4").value;
+var ps5 = document.getElementById("prog5").value;
+var ps6 = document.getElementById("prog6").value;
+var ps7 = document.getElementById("prog7").value;
+var ps8 = document.getElementById("prog8").value;
+var ps9 = document.getElementById("prog9").value;
+var ps10 = document.getElementById("prog10").value;
+var ps11 = document.getElementById("prog11").value;
+var ps12 = document.getElementById("prog12").value;
+var ps13 = document.getElementById("prog13").value;
+//captura el valor del elemento
+var fr1 = document.getElementById("for1").value;
+var fr2 = document.getElementById("for2").value;
+var fr3 = document.getElementById("for3").value;
+var fr4 = document.getElementById("for4").value;
+
+
+
+
 'use strict';
 $(document).ready(function() {
     setTimeout(function() {
@@ -124,13 +183,13 @@ $(document).ready(function() {
         $(function() {
             var options = {
                 chart: {
-                    height: 350,
+                    height: 330,
                     type: 'bar',
                 },
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '55%',
+                        columnWidth: '50%',
                         endingShape: 'rounded'
                     },
                 },
@@ -140,41 +199,139 @@ $(document).ready(function() {
                 colors: ["#0e9e4a", "#7267EF", "#EA4D4D"],
                 stroke: {
                     show: true,
-                    width: 2,
+                    width: 0.8,
                     colors: ['transparent']
                 },
                 series: [{
-                    name: 'Net Profit',
-                    data: [44, 55, 57, 56, 61, 58, 63]
-                }, {
-                    name: 'Revenue',
-                    data: [76, 85, 101, 98, 87, 105, 91]
-                }, {
-                    name: 'Free Cash Flow',
-                    data: [35, 41, 36, 26, 45, 48, 52]
+                    name: 'Estudiantes',
+                    data: [parseInt(month1), parseInt(month2), parseInt(month3), parseInt(month4), parseInt(month5), parseInt(month6), parseInt(month7),parseInt(month8),parseInt(month9),parseInt(month10),parseInt(month11)]
                 }],
                 xaxis: {
-                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    categories: ['EN','FE','MA', 'AB', 'MA', 'JU', 'JUL','AG','SE','OC','NO'],
                 },
                 yaxis: {
                     title: {
-                        text: '$ (thousands)'
+                        text: 'Estudiantes'
                     }
                 },
                 fill: {
-                    opacity: 1
+                    opacity: 0.8
 
                 },
                 tooltip: {
                     y: {
                         formatter: function(val) {
-                            return "$ " + val + " thousands"
+                            return "" + val + ""
                         }
                     }
                 }
             }
             var chart = new ApexCharts(
                 document.querySelector("#bar-chart-1"),
+                options
+            );
+            chart.render();
+        });
+        $(function() {
+            var options = {
+                chart: {
+                    height: 330,
+                    type: 'bar',
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '50%',
+                        endingShape: 'rounded'
+                    },
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                colors: ["#176399","#0e9e4a", "#7267EF"],
+                stroke: {
+                    show: true,
+                    width: 0.8,
+                    colors: ['transparent']
+                },
+                series: [{
+                    name: '',
+                    data: [parseInt(pro1),parseInt(pro2),parseInt(pro3),parseInt(pro4),parseInt(pro6),parseInt(pro7),parseInt(pro9),parseInt(pro10),parseInt(pro11),parseInt(pro12),parseInt(pro13),parseInt(pro14),parseInt(pro15),parseInt(pro16),parseInt(pro17),parseInt(pro18),parseInt(pro19),parseInt(pro20),parseInt(pro21),parseInt(pro22),parseInt(pro23)]
+                }],
+                xaxis: {
+                    categories: ['URG','PED','MEI','GIN','CTR','TOX','CIR','EXU','UGP','PSI','FAC','ARC','GEH','FAR','JUR','NUT','INB','UCI','SGP','LAB','SST'],
+                },
+                yaxis: {
+                    title: {
+                        text: 'SERVICIOS'
+                    }
+                },
+                fill: {
+                    opacity: 0.8
+
+                },
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return "" + val + ""
+                        }
+                    }
+                }
+            }
+            var chart = new ApexCharts(
+                document.querySelector("#bar-chart-2"),
+                options
+            );
+            chart.render();
+        });
+        $(function() {
+            var options = {
+                chart: {
+                    height: 330,
+                    type: 'bar',
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '50%',
+                        endingShape: 'rounded'
+                    },
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                colors: ["#176399","#0e9e4a", "#7267EF"],
+                stroke: {
+                    show: true,
+                    width: 0.8,
+                    colors: ['transparent']
+                },
+                series: [{
+                    name: '',
+                    data: [parseInt(ps1),parseInt(ps2),parseInt(ps3),parseInt(ps4),parseInt(ps5),parseInt(ps6),parseInt(ps7),parseInt(ps8),parseInt(ps9),parseInt(ps10),parseInt(ps11),parseInt(ps12),parseInt(ps13)]
+                }],
+                xaxis: {
+                    categories: ['MED','ENF','PSI','TRS','ADS','SEF','SAP','FIT','IBI','ATP','AXE','INQ','NUT'],
+                },
+                yaxis: {
+                    title: {
+                        text: 'PROGRAMAS'
+                    }
+                },
+                fill: {
+                    opacity: 0.8
+
+                },
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return "" + val + ""
+                        }
+                    }
+                }
+            }
+            var chart = new ApexCharts(
+                document.querySelector("#bar-chart-6"),
                 options
             );
             chart.render();
@@ -260,10 +417,11 @@ $(document).ready(function() {
         $(function() {
             var options = {
                 chart: {
-                    height: 400,
+                    height: 377,
                     type: 'donut',
                 },
-                series: [44, 55, 41, 17, 15],
+                labels:['TÉCNICO','TÉCNOLOGO','PREGRADO','POSTGRADO'],
+                series: [parseInt(fr1), parseInt(fr2), parseInt(fr3), parseInt(fr4)],
                 colors: ["#7267EF", "#0e9e4a", "#3ec9d6", "#ffa21d", "#EA4D4D"],
                 legend: {
                     show: true,

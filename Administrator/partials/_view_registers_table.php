@@ -18,12 +18,24 @@
                             <th>Observaciones</th>
                             <th>DOCENTE</th>
                             <th >TIPO VINCULACION</th>
+                            <th>ACCIÓN</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <form action="" method="POST">
+                        <form action="../logica/update_anulated_state.php" method="POST">
                             <?php 
+
                             while($dates = mysqli_fetch_array($consulta2)){
+                                if($dates['anulated'] == 0){
+                                    $anulado = "NO";
+                                    $valor = "SI";
+                                    $var = 1;
+                                }else{
+                                    $anulado = "SI";
+                                    $valor = "NO";
+                                    $var = 0;
+                                }
+                                
                             ?> 
                                 
                             <tr>
@@ -38,10 +50,13 @@
                                 <td><?php echo $dates['observation']?></td>
                                 <td><?php echo $dates['teacher']?></td>
                                 <td><?php echo $dates['type_teacher']?></td>
+                                <td><button class=" btn-danger"><i class="fa fa-trash"></i></button></td>
+
+                            </tr>
                             <?php
+                            
                             }
                             ?>
-                            </tr>
                         </form>
                     </tbody>
                 </table>

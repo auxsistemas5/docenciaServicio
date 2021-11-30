@@ -93,40 +93,45 @@
                                     }
                                 }
                                 if($array[9] != ""){
-                                    if($array[9] == 'TECNICO'){
+                                    if($array[9] == 'TÉCNICO'){
                                         $for1 = $array[9];
-                                        $for2 = "TECNOLOGO";
-                                        $for3 = "PROFESIONAL";
+                                        $for2 = "TECNÓLOGO";
+                                        $for3 = "PREGRADO";
                                         $for4 = "POSTGRADO";
-                                    }else if($array[9] == 'TECNOLOGO'){
+                                    }else if($array[9] == 'TECNÓLOGO'){
                                         $for1 = $array[9];
-                                        $for2 = "TECNICO";
-                                        $for3 = "PROFESIONAL";
+                                        $for2 = "TÉCNICO";
+                                        $for3 = "PREGRADO";
                                         $for4 = "POSTGRADO";
-                                    }else if($array[9] == 'PROFESIONAL'){
+                                    }else if($array[9] == 'PREGRADO'){
                                         $for1 = $array[9];
-                                        $for2 = "TECNICO";
-                                        $for3 = "TECNOLOGO";
+                                        $for2 = "TÉCNICO";
+                                        $for3 = "TECNÓLOGO";
                                         $for4 = "POSTGRADO";
                                     }else if($array[9] == 'POSTGRADO'){
                                         $for1 = $array[9];
-                                        $for2 = "TECNICO";
-                                        $for3 = "TECNOLOGO";
-                                        $for4 = "PROFESIONAL";
+                                        $for2 = "TÉCNICO";
+                                        $for3 = "TECNÓLOGO";
+                                        $for4 = "PREGRADO";
                                     }else if($array[9] == ''){
-                                        $for1 = "TECNICO";
-                                        $for2 = "TECNOLOGO";
-                                        $for3 = "PROFESIONAL";
+                                        $for1 = "TÉCNICO";
+                                        $for2 = "TECNÓLOGO";
+                                        $for3 = "PREGRADO";
                                         $for4 = "POSTGRADO";
                                     }
+                                }else{
+                                    $for1 = "TÉCNICO";
+                                    $for2 = "TECNÓLOGO";
+                                    $for3 = "PREGRADO";
+                                    $for4 = "POSTGRADO";
                                 }
 
                                 
-                                if($array[11] == 'SI'){
-                                    $res1 = "SI";
+                                if($array[11] == 'SI' OR $array[11] == 'si'){
+                                    $res1 = $array[11];
                                     $res2 = "NO";
                                 }else if($array[11] == "NO"){
-                                    $res1 = "NO";
+                                    $res1 = $array[11];
                                     $res2 = "SI";
                                 }else if($array[11] == ''){
                                     $res1 = "NO";
@@ -194,7 +199,7 @@
                                                     <div class=''>
                                                         <b>Formacion:
                                                         <select class='form-control' name='formation'>
-                                                            <option  value='$for1' selected='selected' >$for1</option>
+                                                            <option  value='$array[9]' selected='selected' >$array[9]  </option>
                                                             <option  value='$for2' >$for2</option>
                                                             <option  value='$for3' >$for3</option>
                                                             <option  value='$for4' >$for4</option>
@@ -207,7 +212,7 @@
                                                 <div class='form-group '>
                                                     <b>Anexo:
                                                     <select class='form-control' name='anexo'>
-                                                        <option  value='$res1' selected='selected' >$res1</option>
+                                                        <option  value='$array[11]' selected='selected' >$array[11]</option>
                                                         <option  value='$res2' >$res2</option>
                                                     </select>
                                                 </div>

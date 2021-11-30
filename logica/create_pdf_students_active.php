@@ -80,20 +80,19 @@
         
     </table> <br><br>
     <div class='col-lg-12 '>
-        <div class='card  bg-light '>
+        <div class='card bg-light '>
             <div class='card-header'>
                 <h3 class=""><?php echo $rst[0];?> - ESTUDIANTES ACTIVOS</h3>
             </div>
             <!-- /.panel-heading -->
             <div class='card-body'>
                 <div class='table-responsive'>
-                    <table class='table' border="1" style="border-collapse: collapse;">
+                    <table class='table' border="1" style="border-collapse: collapse;  align-items: center; width: 100%;">
                         <thead>
                             <tr>
 
                                 <th>NOMBRE</th>
                                 <th>DOCUMENTO</th>
-                                <th>TELEFONO</th>
                                 <th>CARGO</th>
                                 <th>PROGRAMA</th>
                                 <th>CORREO:</th>
@@ -108,7 +107,6 @@
                             
                                 <td><?php echo $dates['username']?></td>
                                 <td><?php echo $dates['document']?></td>
-                                <td><?php echo $dates['phone']?></td>
                                 <td><?php echo $dates['position']?></td>
                                 <td><?php echo $dates['programs_name']?></td>
                                 <td><?php echo $dates['email']?></td>
@@ -157,6 +155,7 @@ use Dompdf\Dompdf;
 
 //para mostrar imagenes
 $dompdf = new Dompdf();
+
 
 $options = $dompdf->getOptions ();
 $options->set('isRemoteEnabled', true);

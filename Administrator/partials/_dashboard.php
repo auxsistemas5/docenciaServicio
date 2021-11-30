@@ -2,7 +2,21 @@
     require '../logica/conexion.php';
     $quer = "SELECT id,name FROM instituciones ";
     $execute = mysqli_query($conexion,$quer);
-    require '../logica/stats_graphics_for_institution.php'
+    require '../logica/stats_graphics_for_institution.php';
+    require '../logica/stats_graphics_for_dates.php';
+    require '../logica/stats_graphics_for_services.php';
+    require '../logica/stats_graphics_for_program.php';
+    require '../logica/stats_graphics_for_formation.php';
+
+    $queryS = "SELECT id FROM usuarios";
+    $executeS = mysqli_query($conexion,$queryS);
+    
+    $i = 0;
+    while($st = mysqli_fetch_array($executeS)){
+        $i++;
+    }
+
+
 ?>
 
 
@@ -53,6 +67,55 @@
                     <div id="pie-chart-1"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h4>Estudiantes que ingresan por mes</h4>
+            <h5>Estudiantes totales: <?php echo $i ?></h5>
+
+        </div>
+        <div class="card-body">
+            <div id="bar-chart-1"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h4>Estudiantes Registrados por Servicio</h4>
+            <h5>Servicios totales: 23</h5>
+
+        </div>
+        <div class="card-body">
+            <div id="bar-chart-2"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h4>Estudiantes Registrados por Programa</h4>
+            <h5>Servicios totales: 13</h5>
+
+        </div>
+        <div class="card-body">
+            <div id="bar-chart-6"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h4>Estudiantes Registrados por Formación</h4>
+            <h5>Formaciones totales: 4</h5>
+
+        </div>
+        <div class="card-body">
+            <div id="pie-chart-2"></div>
         </div>
     </div>
 </div>

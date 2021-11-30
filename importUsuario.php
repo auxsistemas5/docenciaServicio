@@ -35,8 +35,8 @@
             if($r > 1){
                 echo "hay";
             }else if($r < 1){
-                $insert = "INSERT INTO usuarios (username,document,password,phone,id_institucion,position,formation,email) 
-                            VALUES ('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]','$row[6]','$row[7]')";
+                $insert = "INSERT INTO usuarios(username,document,password,phone,id_institucion,position,formation,email,state) 
+                            VALUES ('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]','$row[6]','$row[7]',$row[8])";
                 $result = mysqli_query($conexion,$insert);
                 
                 //echo $id;

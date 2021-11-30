@@ -10,7 +10,7 @@
 
     while($date = mysqli_fetch_array($exe1)){
         if($i == 0){
-            $sql2 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql2 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1 ";
             $exe2 = mysqli_query($conexion,$sql2);
 
             $name1 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -22,7 +22,7 @@
             }
         }
         else if($i == 1 ){
-            $sql3 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql3 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND  instituciones.id = $i+1 ";
             $exe3 = mysqli_query($conexion,$sql3);
 
             $name2 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -34,7 +34,7 @@
             }
         }
         else if($i == 2 ){
-            $sql4 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql4 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe4 = mysqli_query($conexion,$sql4);
 
             $name3 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -46,7 +46,7 @@
             }
         }
         else if($i == 3 ){
-            $sql5 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql5 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe5 = mysqli_query($conexion,$sql5);
 
             $name4 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -58,7 +58,7 @@
             }
         }
         else if($i == 4 ){
-            $sql6 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql6 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe6 = mysqli_query($conexion,$sql6);
 
             $name5 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -70,7 +70,7 @@
             }
         }
         else if($i == 5 ){
-            $sql7 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql7 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe7 = mysqli_query($conexion,$sql7);
 
             $name6 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -82,7 +82,7 @@
             }
         }
         else if($i == 6 ){
-            $sql8 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql8 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe8 = mysqli_query($conexion,$sql8);
 
             $name7 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -94,7 +94,7 @@
             }
         }
         else if($i == 7 ){
-            $sql9 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql9 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe9 = mysqli_query($conexion,$sql9);
 
             $name8 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -106,7 +106,7 @@
             }
         }
         else if($i == 8 ){
-            $sql10 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql10 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe10 = mysqli_query($conexion,$sql10);
 
             $name9 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -118,7 +118,7 @@
             }
         }
         else if($i == 9 ){
-            $sql11 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql11 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe11 = mysqli_query($conexion,$sql11);
 
             $name10 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -130,7 +130,7 @@
             }
         }
         else if($i == 10 ){
-            $sql12 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql12 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe12 = mysqli_query($conexion,$sql12);
 
             $name11 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -142,7 +142,7 @@
             }
         }
         else if($i == 11 ){
-            $sql13 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql13 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe13 = mysqli_query($conexion,$sql13);
 
             $name12 = "SELECT name FROM instituciones WHERE id = $i+1";
@@ -154,7 +154,7 @@
             }
         }
         else if($i == 12 ){
-            $sql14 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE instituciones.id = $i+1";
+            $sql14 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe14 = mysqli_query($conexion,$sql14);
 
             $name13 = "SELECT name FROM instituciones WHERE id = $i+1";

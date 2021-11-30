@@ -77,7 +77,7 @@
                                             <select class="form-control" name="formation" placeholder="Seleccione">
                                                 <option value="TECNICO">Tecnico</option>
                                                 <option value="TECNOLOGO">Tecnologo</option>
-                                                <option value="PROFESIONAL">Profesional</option>
+                                                <option value="PREGRADO">Profesional</option>
                                                 <option value="POSTGRADO">PostGrado</option>
                                             </select>
                                         </div>  

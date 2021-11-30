@@ -71,11 +71,11 @@
                                                     <input name='id' value='$res[0]' hidden>
                                                     <div class='col-md-6'>
                                                         <label for=''>Nombre</label>
-                                                        <input name='name' class='form-control' type='text' value='$res[1]'>
+                                                        <input name='name' class='form-control' type='text' value='$res[1]' required>
                                                     </div>
                                                     <div class='col-md-3'>
                                                         <label for=''>Acronimo(Siglas)</label>
-                                                        <input name='acronym' class='form-control' type='text' value='$res[2]'>
+                                                        <input name='acronym' class='form-control' type='text' value='$res[2]'required>
                                                     </div>
                                                     <div class='col-md-3'>
                                                         <label for=''>Telefono</label>
@@ -85,7 +85,7 @@
                                                 <div class='row '>
                                                     <div class='col-md-4'>
                                                         <label for=''>Nit</label>
-                                                        <input name='nit' class='form-control' type='text' value='$res[6]'>
+                                                        <input name='nit' class='form-control' type='text' value='$res[6]'required>
                                                     </div>
                                                     <div class='col-md-4'>
                                                         <label for=''>Direccion</label>
@@ -99,7 +99,7 @@
                                                 <div class='row'>
                                                     <div class='col-md-4'>
                                                         <label for=''>Inicio Convenio</label>
-                                                        <input name='agreement' class='form-control' type='text' value='$res[3]'>
+                                                        <input name='agreement' class='form-control' type='text' value='$res[3]'required>
                                                     </div>
                                                     <div class='col-md-4'>
                                                         <label for=''>Final Convenio</label>

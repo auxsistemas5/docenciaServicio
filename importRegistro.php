@@ -28,17 +28,64 @@
     $cantidad = $spreadsheet->getActiveSheet()->toArray();
     foreach ($cantidad as $row) {
         if($row[0] != ''){
-            $id = "SELECT id FROM usuarios WHERE document = '$row[1]'";
+            $id = "SELECT id FROM usuarios WHERE usuarios.document = '$row[1]'";
             $result = mysqli_query($conexion,$id);
             $mostrar = mysqli_fetch_array($result);
 
-            if($mostrar > 0){
-                
-                $insert = "INSERT INTO registro (id_user,admission_date,finish_date,id_program,id_service,teacher,type_teacher) VALUES 
-                ('$mostrar[0]','$row[8]','$row[9]','$row[10]','$row[11]','$row[12]','$row[13]')";
+            if($row[15] == ''){
+                $row[15] = "Sin Observaciones";
+            }
+
+    
+            if($row[9] == ''){
+                $row[9] = "0000-00-00";
+            }
+
+            if($row[10] == ''){
+                $row[10] = "0000-00-00";
+            }
+
+            if($row[11] == ''){
+                $row[11] = "";
+            }
+
+            if($row[12] == ''){
+                $row[12] = "";
+            }
+
+            if($row[13] == ''){
+                $row[13] = "";
+            }
+
+            if($row[14] == ''){
+                $row[14] = "";
+            }
+
+            //echo $id;
+            if($mostrar != null){
+
+                $insert = "INSERT INTO registro(id_user,admission_date,finish_date,id_program,id_service,teacher,type_teacher,observation) VALUES 
+                ('$mostrar[0]','$row[9]','$row[10]','$row[11]','$row[12]','$row[13]','$row[14]','$row[15]')";
     
                 $print = mysqli_query($conexion,$insert);
+    
+                   
+               if(!$print){
+                    echo "no se ingreso";
+               }else{
+                   echo "ingreso con exito";
+               }
             }
+
+           /* if( $id != ''){
+
+
+
+            }*/
+                
+                
+
+                
         }
 
     }
