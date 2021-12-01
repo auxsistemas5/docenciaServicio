@@ -46,7 +46,7 @@
                                     $consulta2 = "";
                                 }else if ($array){
                                     $id = $array[0];
-                                    $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation,registro.anulated
+                                    $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation,registro.anulated,usuarios.position
                                     FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id AND registro.anulated = 0";
 
 

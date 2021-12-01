@@ -119,4 +119,16 @@
         </div>
     </div>
 </div>
+<?php
+    require '../logica/conexion.php';
+
+    $sqlReg = "SELECT * FROM docentes WHERE state = 1";
+    $resReg = mysqli_query($conexion,$sqlReg);
+                              
+    require '_view_teachers_table.php';
+    
+
+
+
+?>
 

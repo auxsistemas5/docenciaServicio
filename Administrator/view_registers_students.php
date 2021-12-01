@@ -27,7 +27,6 @@
     <link rel="icon" href="https://www.hmfs.gov.co/wp-content/uploads/2021/08/cropped-ISOTIPOF-8-1-32x32.png" sizes="32x32">
 
     <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="../assets/fonts/font-awsome-pro/css/pro.min.css">
@@ -36,7 +35,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="..assets/css/customizer.css">
+    <link rel="stylesheet" href="../assets/css/customizer.css">
     <script language="JavaScript">
         window.history.forward();
     </script>

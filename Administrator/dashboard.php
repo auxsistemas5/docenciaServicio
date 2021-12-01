@@ -31,7 +31,6 @@
     </script>
 
     <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="../assets/fonts/font-awsome-pro/css/pro.min.css">
@@ -40,7 +39,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="..assets/css/customizer.css">
+    <link rel="stylesheet" href="../assets/css/customizer.css">
     
 
 </head>

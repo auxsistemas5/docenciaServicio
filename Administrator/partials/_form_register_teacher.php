@@ -35,11 +35,11 @@
                 <div class="row">
                     <div class="col-md-3">
                         <label for="">Fecha Inico:</label>
-                        <input class="form-control" type="date" name="start" required>
+                        <input class="form-control" type="date" name="start" >
                     </div>
                     <div class="col-md-3">
                         <label for="">Fecha Finalización:</label>
-                        <input class="form-control" type="date" name="end" required>
+                        <input class="form-control" type="date" name="end" >
                     </div>
                     <div class="col-md-3">
                         <label for="">Tipo de Vinculación:</label>
@@ -54,7 +54,7 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="">Tipo de docencia</label>
+                        <label for="">Servicio:</label>
                         <Select name="type_teacher" class="form-control form-select">
                             <?php 
                              require '../logica/conexion.php';
@@ -69,6 +69,39 @@
                             }
                             ?>
                         </Select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Programa:</label>
+                        <Select name="type_prog" class="form-control form-select">
+                            <?php 
+                             require '../logica/conexion.php';
+
+                             $sqlP = "SELECT programas.id,programas.programs_name FROM programas";
+                             $resP = mysqli_query($conexion,$sqlP);                         
+                            
+                            while($mostrar = mysqli_fetch_array($resP)){
+                            ?>
+                                <option class="" value="<?php echo $mostrar['programs_name'] ?>"><?php echo $mostrar['programs_name'] ?></option>                            
+                            <?php
+                            }
+                            ?>
+                        </Select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Correo:</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Telefono:</label>
+                        <input type="text" class="form-control" name="phone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="">Observaciones:</label>
+                        <input type="text" class="form-control" name="observation">
                     </div>
                 </div>
                 <div class="row col-md-3 mt-2">

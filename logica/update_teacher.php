@@ -10,6 +10,10 @@
     $id_ins = $_POST['id_institution'];
     $type = $_POST['type_vinc'];
     $type_teacher = $_POST['type_teacher'];
+    $type_pro = $_POST['type_prog'];
+    $email = $_POST['email'];
+    $observation = $_POST['observation'];
+    $phone = $_POST['phone'];
 
     $sql = mysqli_query($conexion, "UPDATE docentes SET 
                                         name = '$name',
@@ -19,14 +23,18 @@
                                         start = '$inicio',
                                         end = '$final',
                                         type_vinc = '$type' ,
-                                        type_teacher = '$type_teacher' WHERE document = $document
+                                        type_teacher = '$type_teacher',
+                                        phone = '$phone',
+                                        email = '$email',
+                                        type_prog = '$type_pro',
+                                        observation = '$observation' WHERE document = $document
                                         ");
     
     echo $sql;
     if(!$sql){
         echo '<script language="javascript">alert("Error, no se Actualizo Verifique nuevamente");window.location.href="../Administrator/register_teachers.php"</script>';
     }else{
-        echo '<script language="javascript">alert("Exito, se Actualizo Verifique nuevamente");window.location.href="../Administrator/register_teachers.php"</script>';
+        echo '<script language="javascript">alert("Exito, se Actualizo Correctamente");window.location.href="../Administrator/register_teachers.php"</script>';
     }
 
 

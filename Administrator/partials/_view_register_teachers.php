@@ -63,13 +63,24 @@
 
 
 
-                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_teacher
+                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_teacher,docentes.type_prog,docentes.observation
                             FROM docentes
                             INNER JOIN instituciones
                             ON docentes.id_institution = instituciones.id where instituciones.id = '$institution'";
 
                             $sq2 = mysqli_query($conexion,$con2);
                             $dates2 = mysqli_fetch_array($sq2);
+
+                            $programa = $dates[11];
+                            $servicio = $dates[8];
+
+                            $sqlP = "SELECT programs_name FROM programas where id = $programa ";
+                            $resP = mysqli_query($conexion,$sqlP);
+                            $prog = mysqli_fetch_array($resP);
+
+                            $sqlS = "SELECT services_name FROM servicios where id = $servicio ";
+                            $resS = mysqli_query($conexion,$sqlS);
+                            $proS = mysqli_fetch_array($resS);
 
                             
 
@@ -191,15 +202,39 @@
                                                     </div>
                                                 </div>
                                                 <div class='row'>
-                                                    <div class='form-group col-md-6'>
-                                                        <label for=''>Tipo de  Docencia:</label>
-                                                        <input type='text' name='type_teacher' value='$dates2[9]'  class='form-control'>
+                                                    <div class='col-md-4'>
+                                                        <label for=''>Programa:</label>
+                                                        <select name='type_prog' id='' class='form-control'>
+                                                            <option class='form-control' type='text' value='$dates[11]' name=''>$prog[0]</option>
+                                                        </select>
                                                     </div>
-                                                    <div class='col-md-6 form-group'>
+                                                    <div class='form-group col-md-4'>
+                                                        <label for=''>Servicio:</label>
+                                                        <select name='type_teacher' id='' class='form-control'>
+                                                            <option type='text' value='$dates[8]'  class='form-control'>$proS[0]</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class='col-md-4 form-group'>
                                                         <label for=''>Institucion:</label>
                                                         <select name='id_institution'  class='form-control'>
                                                             <option value='$institution'>$dates2[7]</option>
                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class='row'>
+                                                    <div class='form-group col-md-3'>
+                                                        <label for=''>Telefono:</label>
+                                                        <input class='form-control' type='text' value='$dates[9]' name='phone'>
+                                                    </div>
+                                                    <div class='form-group col-md-9'>
+                                                        <label for=''>Correo:</label>
+                                                        <input class='form-control' type='text' value='$dates[10]' name='email'>
+                                                    </div>
+                                                </div>
+                                                <div class='row'>
+                                                    <div class='form-group col-md-12'>
+                                                        <label for=>Observaciones:</label>
+                                                        <input class='form-control' type='text' value='$dates[12]' name='observation'>
                                                     </div>
                                                 </div>
                                                 <div class='row'>
