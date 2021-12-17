@@ -46,8 +46,9 @@
                                     $consulta2 = "";
                                 }else if ($array){
                                     $id = $array[0];
+                                    //consulta el ultimo registro hecho hacia el usuario
                                     $query2 = "SELECT registro.id,usuarios.username,servicios.services_name,programas.programs_name,registro.admission_date,registro.finish_date,registro.teacher,registro.type_teacher,registro.observation,registro.anulated,usuarios.position
-                                    FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id AND registro.anulated = 0";
+                                    FROM (((registro INNER JOIN programas ON programas.id = registro.id_program) INNER JOIN servicios ON servicios.id = registro.id_service) INNER JOIN usuarios ON usuarios.id = registro.id_user)where registro.id_user = $id AND registro.anulated = 0 ORDER BY registro.admission_date";
 
 
                                     $consulta2 = mysqli_query($conexion,$query2);

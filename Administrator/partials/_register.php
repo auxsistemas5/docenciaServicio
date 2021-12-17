@@ -103,8 +103,8 @@
                                         $for2 = "TÉCNICO";
                                         $for3 = "PREGRADO";
                                         $for4 = "POSTGRADO";
-                                    }else if($array[9] == 'PREGRADO'){
-                                        $for1 = $array[9];
+                                    }else if($array[9] == 'PREGRADO' OR $array[9] == 'PROFESIONAL'){
+                                        $for1 = "PREGRADO";
                                         $for2 = "TÉCNICO";
                                         $for3 = "TECNÓLOGO";
                                         $for4 = "POSTGRADO";

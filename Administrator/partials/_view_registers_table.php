@@ -11,7 +11,6 @@
                         <tr>
                             <th hidden>ID</th>
                             <th>NOMBRE</th>
-                            <th>CARGO</th>
                             <th>PROGRAMA</th>
                             <th>SERVICIO</th>
                             <th>FECHA INICIO</th>
@@ -36,6 +35,7 @@
                                     $valor = "NO";
                                     $var = 0;
                                 }
+
                                 
                             ?> 
                                 
@@ -44,7 +44,6 @@
                                 <td hidden><input type="text" name="id" value="<?php echo $dates['id']?>"
                                 ></td>
                                 <td><?php echo $dates['username']?></td>
-                                <td><?php echo $dates['position']?></td>
                                 <td><?php echo $dates['programs_name']?></td>
                                 <td><?php echo $dates['services_name']?></td>
                                 <td><?php echo $dates['admission_date']?></td>

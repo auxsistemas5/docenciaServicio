@@ -144,6 +144,19 @@
         $k1++;
     }
 
+    //muestra los estudiantes ingresados en el mes de diciembre
+    $sqlD10 = "SELECT *
+    FROM registro
+    INNER JOIN programas
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-12-01' AND '2021-12-31' AND registro.anulated = 0";
+
+    $resD10 = mysqli_query($conexion,$sqlD10);
+    $l1 = 0;
+
+    while($month9 = mysqli_fetch_array($resD10)){
+        $l1++;
+    }
+
 
     echo "<input value='$a1' id='mon1' hidden />";
     echo "<input value='$b1' id='mon2' hidden />";
@@ -156,5 +169,6 @@
     echo "<input value='$i1' id='mon9' hidden />";
     echo "<input value='$j1' id='mon10' hidden />";
     echo "<input value='$k1' id='mon11' hidden />";
+    echo "<input value='$l1' id='mon12' hidden />";
 
 ?>

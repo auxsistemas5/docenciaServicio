@@ -1,3 +1,4 @@
+
 <?php
 require 'conexion.php';
 session_start();
@@ -21,7 +22,8 @@ if($array > 0){
     $_SESSION['state'] = $array[5];
     
     if($_SESSION['state'] == 1){
-        echo '<script language="javascript">alert("Ingreso con Exito");window.location.href="../Students/dashboard.php"</script>';
+        
+        echo '<script language="javascript">alert("Entro con Exito");window.location.href="../Students/dashboard.php"</script>';
     }else{
         if($_SESSION['state'] == 0){
 
@@ -36,7 +38,7 @@ if($array > 0){
         $_SESSION['document'] = $array2[2];
         $_SESSION['state'] = $array2[4];
         if($_SESSION['state'] == 1){
-            echo '<script language="javascript">alert("Ingreso con Exito");window.location.href="../Administrator/dashboard.php"</script>';
+            echo '<script language="javascript">alert("Ingreso Con Exito");window.location.href="../Administrator/dashboard.php"</script>';
 
         }else if($_SESSION['state'] == 0){
             
@@ -54,3 +56,4 @@ if($array > 0){
 
 
 ?>
+

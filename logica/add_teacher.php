@@ -13,8 +13,9 @@
     $email = $_POST['email'];
     $type_prog = $_POST['type_prog'];
     $observation = $_POST['observation'];
+    $calification = $_POST['calification'];
 
-    $sql = "INSERT INTO docentes(name,document,id_institution,start,end,type_vinc,type_teacher,phone,email,type_prog,observation) VALUES (
+    $sql = "INSERT INTO docentes(name,document,id_institution,start,end,type_vinc,type_teacher,phone,email,type_prog,observation,calification) VALUES (
         '$name',
         '$document',
         '$i_in',
@@ -25,7 +26,8 @@
         '$phone',
         '$email',
         '$type_prog',
-        '$observation'
+        '$observation',
+        '$calification'
      )";
 
     $response = mysqli_query($conexion,$sql);

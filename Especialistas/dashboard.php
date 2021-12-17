@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION['document']) && !isset($_SESSION['password'])) {
-        header('Location: ../login.php');
+    /*if (!isset($_SESSION['document']) ) {
+        header('Location: ../especialistas.php');
         exit();
-    }
+    }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,13 +19,16 @@
     	<![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
+    <link rel="icon" href="https://www.hmfs.gov.co/wp-content/uploads/2021/08/cropped-ISOTIPOF-8-1-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
-    <link rel="icon" href="https://www.hmfs.gov.co/wp-content/uploads/2021/08/cropped-ISOTIPOF-8-1-32x32.png" sizes="32x32">
-
+    <script language="JavaScript">
+        window.history.forward();
+    </script>
 
     <!-- Favicon icon -->
 
@@ -37,9 +40,7 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/customizer.css">
-    <script language="JavaScript">
-        window.history.forward();
-    </script>
+    
 
 </head>
 
@@ -58,7 +59,6 @@
             <div class="row">
                 <!-- support-section start -->
                 <?php require 'partials/_dashboard.php';  ?>
-                
                 <!-- support-section end -->
                 <!-- customer-section start -->
                 
@@ -68,55 +68,7 @@
             <!-- [ Main Content ] end -->
         </div>
     </div>
-<!-- [ Main Content ] end -->
 
-    <!-- Warning Section start -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="assets/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
-    <!-- Required Js -->
     <script src="../assets/js/vendor-all.min.js"></script>
     <script src="../assets/js/plugins/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/feather.min.js"></script>
@@ -127,6 +79,7 @@
 
 <!-- Apex Chart -->
 <script src="../assets/js/plugins/apexcharts.min.js"></script>
+<script src="../assets/js/pages/chart-apex.js"></script>
 
 
 <!-- custom-chart js -->

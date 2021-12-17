@@ -57,7 +57,7 @@
             <!-- [ Main Content ] start -->
             <div class="row">
                 <!-- support-section start -->
-                <?php require 'partials/_dashboard.php';  ?>
+                <?php require 'partials/_view_exam.php';  ?>
                 
                 <!-- support-section end -->
                 <!-- customer-section start -->

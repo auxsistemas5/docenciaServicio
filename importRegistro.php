@@ -6,7 +6,7 @@
     class MyReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter {
         public function readCell($column, $row, $worksheetName = ""){  
         
-            if ($row > 0){
+            if ($row > 1){
                 return true;
             }
             return false;
@@ -14,7 +14,7 @@
     }
 
     $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-    $inputFileName = 'formato.xlsx';
+    $inputFileName = 'usuarios.xlsx';
     /** Identify the type of $inputFileName */
     $inputFileType = \PhpOffice\PhpSpreadsheet\IOFactory::identify($inputFileName);
     /** Create a new Reader of the type that has been identified **/
@@ -71,9 +71,9 @@
     
                    
                if(!$print){
-                    echo "no se ingreso";
+                    echo "no se ingreso <br>";
                }else{
-                   echo "ingreso con exito";
+                   echo "ingreso con exito <br>";
                }
             }
 

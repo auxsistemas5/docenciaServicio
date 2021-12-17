@@ -59,7 +59,6 @@
             <div class="row">
                 <!-- support-section start -->
                 <?php require 'partials/_dashboard.php';  ?>
-                
                 <!-- support-section end -->
                 <!-- customer-section start -->
                 

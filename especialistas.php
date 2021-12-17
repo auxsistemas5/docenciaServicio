@@ -41,7 +41,7 @@
 <!-- [ auth-signin ] start -->
 <div class="auth-wrapper">
 	<div class="auth-content">
-		<form method="POST" action="logica/logear.php" class="card">
+		<form method="POST" action="logica/logearEspecialista.php" class="card">
 			<div class="row align-items-center text-center">
 				<div class="col-md-12">
 					<div class="card-body">
@@ -53,15 +53,9 @@
 							</div>
 							<input type="text" name="document" class="form-control" placeholder="Documento">
 						</div>
-						<div class="input-group mb-4">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i data-feather="lock"></i></span>
-							</div>
-							<input type="password" name="password" class="form-control" placeholder="Contraseña">
-						</div>
 						
 						<button class="btn btn-block btn-success mb-4">Entrar</button>
-						<p class="mb-0 text-muted"><a href="especialistas.php" class="f-w-400">Especialista</a></p>
+						<p hidden class="mb-0 text-muted">Don’t have an account? <a href="auth-signup.html" class="f-w-400">Signup</a></p>
 					</div>
 				</div>
 			</div>
@@ -79,5 +73,4 @@
 </body>
 
 </html>
-
 

@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION['document']) && !isset($_SESSION['password'])) {
-        header('Location: ../login.php');
+        header('Location: ../index.php');
         exit();
     }
 ?>
@@ -10,7 +10,7 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard</title>
+    <title>Registrar Seminario</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -19,13 +19,14 @@
     	<![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="icon" href="https://www.hmfs.gov.co/wp-content/uploads/2021/08/cropped-ISOTIPOF-8-1-32x32.png" sizes="32x32">
-
 
     <!-- Favicon icon -->
 
@@ -57,7 +58,7 @@
             <!-- [ Main Content ] start -->
             <div class="row">
                 <!-- support-section start -->
-                <?php require 'partials/_dashboard.php';  ?>
+                <?php require 'partials/_view_seminars.php';  ?>
                 
                 <!-- support-section end -->
                 <!-- customer-section start -->

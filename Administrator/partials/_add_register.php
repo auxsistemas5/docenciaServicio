@@ -56,7 +56,7 @@
                             <div class="col-md-4">
                                 <label for="">Docente:</label>
                                 <select class='form-control form-select' name ='teacher'>
-                                    <option>Seleccione</option> 
+                                    <option value = "N/A">Seleccione</option> 
                                     <?php
                                     
         
