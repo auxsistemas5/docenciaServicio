@@ -17,9 +17,6 @@
 
     $sqlConsultaEstudiante = mysqli_query($conexion,$sqlEstudiantesPorEspecialista);
 
-
-
-
 ?>
 <div class="col-md-12">
     <div class="card">

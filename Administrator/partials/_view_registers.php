@@ -1,10 +1,9 @@
 <div class="col-sm-12">
     <div class="card  bg-info ">
         <div class="">
-
             <div class="">
-                <div class="">
-                    <h3 class="card-header"><b>VER REGISTROS</b></h3>
+                <div class="card-header">
+                    <h3 class="     "><b>VER REGISTROS</b></h3>
                 </div>
             </div>
             <div class=" row">
@@ -18,13 +17,8 @@
                                 </button>
                                 
                                 <button class="btn btn-danger" onclick="setTimeout(function(){location.reload();}, 3000);">Refresh</button>
-                            
-                            
                             </span>
                         </div>
-                
-            
-                        
                         <?php
     
                             if(!empty($_POST['document'])){

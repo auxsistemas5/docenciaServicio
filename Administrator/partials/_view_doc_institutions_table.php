@@ -34,7 +34,7 @@
                             ?> 
                                 
                             <tr>
-                            
+                                <?php //eliminar documentos por institución  ?>
                                 <td hidden><input type="text" name="id" value="<?php echo $dates['id']?>"></td>
                                 <td><?php echo $dates['type_file']?></td>
                                 <td><a href="<?php echo $dates['file']?>" target="_blank" >Ver Documento</a></td>

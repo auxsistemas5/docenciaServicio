@@ -40,7 +40,6 @@
                     <td><?php echo $responReg['type_vinc'] ?></td>
                     <td><?php echo $datProg1[0]?></td>
 
-
                 </tr>
                 <?php
                     }
