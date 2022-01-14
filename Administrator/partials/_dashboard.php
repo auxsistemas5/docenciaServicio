@@ -10,7 +10,6 @@
     
     setlocale(LC_ALL,"es_ES");
 
-
     $queryS = "SELECT id FROM usuarios";
     $executeS = mysqli_query($conexion,$queryS);
     
@@ -19,9 +18,7 @@
         $i++;
     }
 
-
 ?>
-
 
 <div class="col-sm-12">
     
@@ -60,7 +57,6 @@
                     </div>"; 
         }
     
-
         ?>
     
     <div class="card  bg-info">
@@ -169,9 +165,6 @@
     $resReg = mysqli_query($conexion,$sqlReg);
                               
     require '_view_teachers_table.php';
-    
-
-
 
 ?>
 

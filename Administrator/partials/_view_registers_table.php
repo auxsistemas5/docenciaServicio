@@ -51,7 +51,10 @@
                                 <td><?php echo $dates['observation']?></td>
                                 <td><?php echo $dates['teacher']?></td>
                                 <td><?php echo $dates['type_teacher']?></td>
-                                <td><button class=" btn-danger"><i class="fa fa-trash"></i></button></td>
+                                <?php if($_SESSION['username'] == "KATERINE HENAO TORO"){
+                                    echo '<td><button class=" btn-danger"><i class="fa fa-trash"></i></button></td>';
+                                }
+                                ?>
 
                             </tr>
                             <?php

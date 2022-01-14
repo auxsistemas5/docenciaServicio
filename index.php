@@ -61,7 +61,10 @@
 						</div>
 						
 						<button class="btn btn-block btn-success mb-4">Entrar</button>
-						<p class="mb-0 text-muted"><a href="especialistas.php" class="f-w-400">Especialista</a></p>
+						<div class="disabled">
+
+							<p hidden class="mb-0 text-muted"><a disabled href="especialistas.php" class="f-w-400">Especialista</a></p>
+						</div>
 					</div>
 				</div>
 			</div>

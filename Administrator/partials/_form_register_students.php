@@ -43,12 +43,12 @@
                                                 <?php
                                                     require '../logica/conexion.php';
                                                     
-                                                    $consulta = "SELECT id,acronym FROM instituciones ";
+                                                    $consulta = "SELECT id,acronym,name FROM instituciones ";
                                                     $ejecutarConsulta = mysqli_query($conexion,$consulta);
 
                                                     while($mostrar = mysqli_fetch_array($ejecutarConsulta)){
                                                     ?>   
-                                                        <option value="<?php echo $mostrar['id']?>"><?php echo $mostrar['acronym']?></option>
+                                                        <option value="<?php echo $mostrar['id']?>"><?php echo $mostrar['name']." - ". $mostrar['acronym']?></option>
                                                     <?php
                                                     }
                                                     ?>
@@ -83,66 +83,12 @@
                                         </div>  
                                     </div>
                                 </div>
+                               
                                 <div class="row">
-                                    <!--<div class="col-md-4">
-                                        <label for="">Programa</label>
-                                        <select class="form-control form-select" name ="id_program">
-                                            <option>Seleccione</option>
-                                            <?php
-                                                require '../logica/conexion.php';
-                                                
-                                                $consulta = "SELECT id,name FROM programas ";
-                                                $ejecutarConsulta = mysqli_query($conexion,$consulta);
-
-                                                while($mostrar = mysqli_fetch_array($ejecutarConsulta)){
-                                                 ?>   
-                                                    <option value="<?php echo $mostrar['id']?>"><?php echo $mostrar['name']?></option>
-                                                <?php
-                                                }
-                                                ?>
-
-                                            ?>
-                                        </select>
+    
+                                    <div class="col-md-12 ">
+                                        <button type="submit" class="btn btn-danger" name="Guardar">Guardar</button>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label  class="form-label">Servicio</label>
-                                        <select class="form-control form-select" name ="id_service" >
-                                            <option>Seleccione</option>
-                                            <?php
-                                                require '../logica/conexion.php';
-                                                
-                                                $consulta = "SELECT id,name FROM servicios ";
-                                                $ejecutarConsulta = mysqli_query($conexion,$consulta);
-
-                                                while($mostrar = mysqli_fetch_array($ejecutarConsulta)){
-                                                 ?>   
-                                                    <option value="<?php echo $mostrar['id']?>"><?php echo $mostrar['name']?></option>
-                                                <?php
-                                                }
-                                                ?>
-
-                                            ?>
-                                        </select> <br>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="row">
-                                    
-                                    <!--<div class="col-md-4">
-                                        <label class="form-label">Fecha Ingreso:</label><br>
-                                        <input type="date" name="">
-                                        
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Fecha Finalizacion:</label><br>
-                                        <input type="date" name="">
-                                        
-                                    </div>-->
-
-                                    
-                                        <div class="col-md-12 ">
-                                            <button type="submit" class="btn btn-success" name="Guardar">Guardar</button>
-                                        </div>
                                                 
                                 </div>
                                 

@@ -5,7 +5,7 @@
     $sql = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-01-01' AND '2021-01-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-01-01' AND '2022-01-31' AND registro.anulated = 0";
 
     $res = mysqli_query($conexion,$sql);
     $a1 = 0;
@@ -17,7 +17,7 @@
     $sqlD = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-02-01' AND '2021-02-28' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-02-01' AND '2022-02-28' AND registro.anulated = 0";
 
     $resD = mysqli_query($conexion,$sqlD);
     $b1 = 0;
@@ -30,7 +30,7 @@
     $sqlD1 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-03-01' AND '2021-03-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-03-01' AND '2022-03-31' AND registro.anulated = 0";
 
     $resD1 = mysqli_query($conexion,$sqlD1);
     $c1 = 0;
@@ -43,7 +43,7 @@
     $sqlD2 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-04-01' AND '2021-04-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-04-01' AND '2022-04-31' AND registro.anulated = 0";
 
     $resD2 = mysqli_query($conexion,$sqlD2);
     $d1 = 0;
@@ -56,7 +56,7 @@
     $sqlD3 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-05-01' AND '2021-05-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-05-01' AND '2022-05-31' AND registro.anulated = 0";
 
     $resD3 = mysqli_query($conexion,$sqlD3);
     $e1 = 0;
@@ -69,7 +69,7 @@
     $sqlD4 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-06-01' AND '2021-06-30' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-06-01' AND '2022-06-30' AND registro.anulated = 0";
 
     $resD4 = mysqli_query($conexion,$sqlD4);
     $f1 = 0;
@@ -82,7 +82,7 @@
     $sqlD5 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-07-01' AND '2021-07-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-07-01' AND '2022-07-31' AND registro.anulated = 0";
 
     $resD5 = mysqli_query($conexion,$sqlD5);
     $g1 = 0;
@@ -96,7 +96,7 @@
     $sqlD6 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-08-01' AND '2021-08-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-08-01' AND '2022-08-31' AND registro.anulated = 0";
 
     $resD6 = mysqli_query($conexion,$sqlD6);
     $h1 = 0;
@@ -109,7 +109,7 @@
     $sqlD7 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-09-01' AND '2021-09-30' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-09-01' AND '2022-09-30' AND registro.anulated = 0";
 
     $resD7 = mysqli_query($conexion,$sqlD7);
     $i1 = 0;
@@ -122,7 +122,7 @@
     $sqlD8 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-10-01' AND '2021-10-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-10-01' AND '2022-10-31' AND registro.anulated = 0";
 
     $resD8 = mysqli_query($conexion,$sqlD8);
     $j1 = 0;
@@ -135,7 +135,7 @@
     $sqlD9 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-11-01' AND '2021-11-30' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-11-01' AND '2022-11-30' AND registro.anulated = 0";
 
     $resD9 = mysqli_query($conexion,$sqlD9);
     $k1 = 0;
@@ -148,7 +148,7 @@
     $sqlD10 = "SELECT *
     FROM registro
     INNER JOIN programas
-    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2021-12-01' AND '2021-12-31' AND registro.anulated = 0";
+    ON registro.id_program = programas.id WHERE registro.admission_date BETWEEN '2022-12-01' AND '2022-12-31' AND registro.anulated = 0";
 
     $resD10 = mysqli_query($conexion,$sqlD10);
     $l1 = 0;

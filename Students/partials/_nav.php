@@ -42,17 +42,14 @@
 					<li class="pc-item">
 						<a href="dashboard.php" class="pc-link "><span class="pc-micon"><i data-feather="inbox"></i></span><span class="pc-mtext">Dashboard</span></a>
 					</li>
-					<li class="pc-item">
-						<a href="list_exam.php" class="pc-link "><span class="pc-micon"><i data-feather="align-justify"></i></span><span class="pc-mtext">Examenes</span></a>
+					<li  class="pc-item">
+						<a  href="list_exam.php" class="pc-link "><span class="pc-micon"><i data-feather="align-justify"></i></span><span class="pc-mtext">Examenes</span></a>
 					</li>
 
-					<li class="pc-item">
-						<a href="resultados.php" class="pc-link "><span class="pc-micon"><i data-feather="award"></i></span><span class="pc-mtext">Resultados</span></a>
+					<li  class="pc-item">
+						<a  href="resultados.php" class="pc-link "><span class="pc-micon"><i data-feather="award"></i></span><span class="pc-mtext">Resultados</span></a>
 					</li>
                     
-                    
-					
-
 				</ul>
 				
 			</div>

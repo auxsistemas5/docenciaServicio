@@ -27,7 +27,9 @@
                                 <td hidden><input type="text" name="id" value="<?php echo $mostrar['id']?>"></td>
                                 <td><?php echo $mostrar['type_document'] ?></td>
                                 <td><a href="<?php echo $mostrar['file'] ?>" target="_blank" rel="noopener noreferrer">Ver Documento</a></td>
-                                <td><button class="btn btn-danger"><i data-feather="trash-2"></button></td>
+                                <?php if($_SESSION['name'] == "KATERINE HENAO TORO")
+                                    echo ' <td><button class="btn btn-danger"><i data-feather="trash-2"></button></td>';
+                                ?>
                             </tr>
                             <?php
                             }

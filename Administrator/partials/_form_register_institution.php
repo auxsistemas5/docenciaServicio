@@ -68,7 +68,6 @@
                                         <input type="date" name="">
                                         
                                     </div>-->
-
                                     
                                         <div class="col-md-12 ">
                                             <button type="submit" class="btn btn-success" name="Guardar">Guardar</button>
