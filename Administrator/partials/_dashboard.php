@@ -7,6 +7,8 @@
     require '../logica/stats_graphics_for_services.php';
     require '../logica/stats_graphics_for_program.php';
     require '../logica/stats_graphics_for_formation.php';
+    
+    setlocale(LC_ALL,"es_ES");
 
     $queryS = "SELECT id FROM usuarios";
     $executeS = mysqli_query($conexion,$queryS);
@@ -16,13 +18,50 @@
         $i++;
     }
 
-
 ?>
 
-
 <div class="col-sm-12">
+    
+    <?php
+        //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
+        $fecha = date("Y-n-d");
+        $sqlDisabled = "SELECT usuarios.id,finish_date FROM registro INNER JOIN usuarios ON registro.id_user = usuarios.id 
+         WHERE usuarios.state = 1 AND finish_date = '$fecha'";
+
+        $consultaDisabled = mysqli_query($conexion,$sqlDisabled);
+
+        if($consultaDisabled){
+
+            while($datesDisabled = mysqli_fetch_array($consultaDisabled)){
+                $id = $datesDisabled['finish_date'];
+                $disabled = "UPDATE usuarios SET state = 0 WHERE id = '$id' ";
+                $consultaDis = mysqli_query($conexion,$disabled);
+
+                if($consultaDis){
+                    echo "<div class='alert alert-warning'>
+                            Se desabilitaron Estudiantes por que finalizaron segun la fecha
+                        </div>"; 
+                }
+            }
+                echo "<div class='alert alert-success'>
+                       Sin Novedades
+                    </div>"; 
+            
+        }else if(!$consultaDisabled){
+            echo "<div class='alert alert-success'>
+                       Sin Novedades
+                    </div>"; 
+        }else{
+            echo "<div class='alert alert-success'>
+                       Sin Novedades
+                    </div>"; 
+        }
+    
+        ?>
+    
     <div class="card  bg-info">
         <div class0="">
+            
 
             <div class="">
                 <div class="">
@@ -126,9 +165,6 @@
     $resReg = mysqli_query($conexion,$sqlReg);
                               
     require '_view_teachers_table.php';
-    
-
-
 
 ?>
 

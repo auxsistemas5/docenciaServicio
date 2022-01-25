@@ -50,6 +50,7 @@ var month8 = document.getElementById("mon8").value;
 var month9 = document.getElementById("mon9").value;
 var month10 = document.getElementById("mon10").value;
 var month11 = document.getElementById("mon11").value;
+var month12 = document.getElementById("mon12").value;
 
 //RECIBE DATOS DEL GRAFICO DE INGRESADOS POR servicio//
 var pro1 = document.getElementById("program1").value;
@@ -204,10 +205,10 @@ $(document).ready(function() {
                 },
                 series: [{
                     name: 'Estudiantes',
-                    data: [parseInt(month1), parseInt(month2), parseInt(month3), parseInt(month4), parseInt(month5), parseInt(month6), parseInt(month7),parseInt(month8),parseInt(month9),parseInt(month10),parseInt(month11)]
+                    data: [parseInt(month1), parseInt(month2), parseInt(month3), parseInt(month4), parseInt(month5), parseInt(month6), parseInt(month7),parseInt(month8),parseInt(month9),parseInt(month10),parseInt(month11),parseInt(month12)]
                 }],
                 xaxis: {
-                    categories: ['EN','FE','MA', 'AB', 'MA', 'JU', 'JUL','AG','SE','OC','NO'],
+                    categories: ['EN','FE','MA', 'AB', 'MA', 'JU', 'JUL','AG','SE','OC','NO','DI'],
                 },
                 yaxis: {
                     title: {

@@ -11,14 +11,14 @@
 
             <div class="">
                 <div class="">
-                    <h3 class="card-header"><b>VER DOCENTES</b></h3>
+                    <h3 class="card-header"><b>VER Especialistas</b></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 offset-md">
                     <form  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                         <div class="container mt-2">
-                            <label for="">Buscar Datos Del Docente</label>
+                            <label for="">Buscar Datos Del Especialista</label>
                             <div class=" form-group input-group">
                                 <input class="form-control" type="text" name="document" required>
                                 <span class="input-group-btn">
@@ -63,7 +63,7 @@
 
 
 
-                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_teacher,docentes.type_prog,docentes.observation
+                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_teacher,docentes.type_prog,docentes.observation,docentes.calification
                             FROM docentes
                             INNER JOIN instituciones
                             ON docentes.id_institution = instituciones.id where instituciones.id = '$institution'";
@@ -152,13 +152,25 @@
                                 $type6 = "ASESOR";
                             }
 
+                            if($dates2['calification'] == 0){
+                                $cal1 = 0;
+                                $cal2 = 1;
+                                $res1 = "SI";
+                                $res2 = "NO";
+                            }else if($dates2['calification'] == 1){
+                                $cal1 = 1;
+                                $cal2 = 0;
+                                $res1 = "NO";
+                                $res2 = "SI";
+                            }
+
                             
                             echo "
                             <div class='col-sm-12'>
                                 <div class='card  bg-light col-md-12'>
                                     <div class=''>
                                         <div class='card-header'>
-                                            <h4>INFORMACION DEL DOCENTE</h4>
+                                            <h4>INFORMACION DEL ESPECIALISTA</h4>
                                         </div>
                                         <div class='card-body'>
                                             <form action='../logica/update_teacher.php' method='POST'>
@@ -226,9 +238,16 @@
                                                         <label for=''>Telefono:</label>
                                                         <input class='form-control' type='text' value='$dates[9]' name='phone'>
                                                     </div>
-                                                    <div class='form-group col-md-9'>
+                                                    <div class='form-group col-md-6'>
                                                         <label for=''>Correo:</label>
                                                         <input class='form-control' type='text' value='$dates[10]' name='email'>
+                                                    </div>
+                                                    <div class='form-group col-md-3'>
+                                                        <label for=''>Califica Internos:</label>
+                                                        <select name='calification' class='form-control'>
+                                                            <option value='$cal1'>$res2</option>
+                                                            <option value='$cal2'>$res1</option>
+                                                        <select>
                                                     </div>
                                                 </div>
                                                 <div class='row'>

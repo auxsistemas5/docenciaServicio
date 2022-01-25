@@ -14,6 +14,7 @@
     $email = $_POST['email'];
     $observation = $_POST['observation'];
     $phone = $_POST['phone'];
+    $calification = $_POST['calification'];
 
     $sql = mysqli_query($conexion, "UPDATE docentes SET 
                                         name = '$name',
@@ -27,7 +28,8 @@
                                         phone = '$phone',
                                         email = '$email',
                                         type_prog = '$type_pro',
-                                        observation = '$observation' WHERE document = $document
+                                        observation = '$observation',
+                                        calification = '$calification' WHERE document = $document
                                         ");
     
     echo $sql;

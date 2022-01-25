@@ -36,7 +36,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="..assets/css/customizer.css">
+    <link rel="stylesheet" href="../assets/css/customizer.css">
     <script language="JavaScript">
         window.history.forward();
     </script>

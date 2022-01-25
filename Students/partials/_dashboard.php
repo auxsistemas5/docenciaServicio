@@ -18,13 +18,17 @@
        
         
     </div>
+</div>
 
-    <style>
-        @media(max-width: 1300px){
-            video{
-                width: 100%;
-            }
+<style>
+    
+    @media(max-width: 1300px){
+        video{
+            width: 100%;
+           
         }
-    </style>
+        
+    }
+</style>
 
 

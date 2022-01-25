@@ -5,21 +5,31 @@
     $sql1 = "SELECT id FROM instituciones WHERE state = 1 ";
 
     $exe1 = mysqli_query($conexion,$sql1);
-    
-    $i = 0;$a = 0;$b =0;$c = 0; $d =0;$e=0;$f=0;$g=0;$h=0;$j=0;$k=0;$l=0;$m=0;$n=0;
 
+    $i = 0;$a = 0;$b =0;$c = 0;$e=0;$f=0;$g=0;$h=0;$j=0;$k=0;$l=0;$m=0;$n=0;
+
+    $d = 0;
     while($date = mysqli_fetch_array($exe1)){
         if($i == 0){
+            
             $sql2 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1 ";
             $exe2 = mysqli_query($conexion,$sql2);
 
             $name1 = "SELECT name FROM instituciones WHERE id = $i+1";
             $n1 = mysqli_query($conexion,$name1);
-            $l1 = mysqli_fetch_array($n1);
+            if($n1 != null or $n1 != ""){
+                
+                $l1 = mysqli_fetch_array($n1);
+            }else{
+                $l1 = [0];
+            }
+            
+            
 
             while($date1 = mysqli_fetch_array($exe2)){
                 $a++;
-            }
+            } 
+            
         }
         else if($i == 1 ){
             $sql3 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND  instituciones.id = $i+1 ";
@@ -104,7 +114,7 @@
             while($date1 = mysqli_fetch_array($exe9)){
                 $h++;
             }
-        }
+        } 
         else if($i == 8 ){
             $sql10 = "SELECT usuarios.id FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 AND instituciones.id = $i+1";
             $exe10 = mysqli_query($conexion,$sql10);
@@ -185,8 +195,10 @@
     $i_r13 = $n;
     echo "<input value='$i_r' id='num_institution'hidden ></input>";
 
-    echo "<input value='$l1[0]' id='name_institution'hidden >";
-    echo "<input value='$i_r1' id='num_institution1'hidden >";
+    echo "<input value='$l1[0]' id='name_institution' hidden>";
+    echo "<input value='$i_r1' id='num_institution1' hidden>";
+    
+    
 
     echo "<input value='$l2[0]' id='name_institution2'hidden >";
     echo "<input value='$i_r2' id='num_institution2'hidden >";
@@ -225,5 +237,5 @@
     echo "<input value='$i_r13' id='num_institution13'hidden >";
     echo "<input value='$l13[0]' id='name_institution13'hidden >";
     
-
+    
 ?>

@@ -61,7 +61,10 @@
 						</div>
 						
 						<button class="btn btn-block btn-success mb-4">Entrar</button>
-						<p hidden class="mb-0 text-muted">Don’t have an account? <a href="auth-signup.html" class="f-w-400">Signup</a></p>
+						<div class="disabled">
+
+							<p hidden class="mb-0 text-muted"><a disabled href="especialistas.php" class="f-w-400">Especialista</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -76,9 +79,8 @@
 <script src="assets/js/plugins/feather.min.js"></script>
 <script src="assets/js/pcoded.min.js"></script>
 
-
-
-
 </body>
 
 </html>
+
+

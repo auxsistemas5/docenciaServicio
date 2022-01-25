@@ -5,7 +5,7 @@
 </div>
 <div class="pc-mob-header pc-header">
 	<div class="pcm-logo">
-		<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+		
 	</div>
 	<div class="pcm-toolbar">
 		<a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -41,6 +41,13 @@
 					</li>
 					<li class="pc-item">
 						<a href="dashboard.php" class="pc-link "><span class="pc-micon"><i data-feather="inbox"></i></span><span class="pc-mtext">Dashboard</span></a>
+					</li>
+					<li hidden class="pc-item">
+						<a disabled href="list_exam.php" class="pc-link "><span class="pc-micon"><i data-feather="align-justify"></i></span><span class="pc-mtext">Examenes</span></a>
+					</li>
+
+					<li hidden class="pc-item">
+						<a disabled href="resultados.php" class="pc-link "><span class="pc-micon"><i data-feather="award"></i></span><span class="pc-mtext">Resultados</span></a>
 					</li>
                     
                     

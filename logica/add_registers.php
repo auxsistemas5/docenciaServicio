@@ -27,7 +27,7 @@
         $teacher = "";
     }
     if($_POST['observation'] == ""){
-        $observation = "";
+        $observation = "N/A";
     }
 
 

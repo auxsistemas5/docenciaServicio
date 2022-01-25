@@ -1,5 +1,3 @@
-
-            <!-- [ sample-page ] start -->
 <div class="col-sm-12">
     <div class="card  bg-info">
         <div class="card-header">
@@ -14,17 +12,15 @@
                             <input type="text" class="form-control" name="document">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-                                </button> 
+                                </button>
                                 <!--Refresca la pagina para borrar los datos de la pantalla-->
                                 <button class="btn btn-danger" onclick="setTimeout(function(){location.reload();}, 3000);">Refresh</button>
                             </span>
-
                         </div>
                     </form>
                 </div>
             </div>
             <div class="">
-                    
                     <?php
                         if(!empty($_POST['document'])){
                             require '../logica/conexion.php';
@@ -34,8 +30,6 @@
                             $query = "SELECT * FROM usuarios WHERE document = '$document'";
                             $consulta = mysqli_query($conexion,$query);
                             $array = mysqli_fetch_array($consulta);
-
-                            
 
                             //echo $array[0];
                             
@@ -103,8 +97,8 @@
                                         $for2 = "TÉCNICO";
                                         $for3 = "PREGRADO";
                                         $for4 = "POSTGRADO";
-                                    }else if($array[9] == 'PREGRADO'){
-                                        $for1 = $array[9];
+                                    }else if($array[9] == 'PREGRADO' OR $array[9] == 'PROFESIONAL'){
+                                        $for1 = "PREGRADO";
                                         $for2 = "TÉCNICO";
                                         $for3 = "TECNÓLOGO";
                                         $for4 = "POSTGRADO";
@@ -224,8 +218,6 @@
                                     </div>                                    
                                 </div>
 
-                                
-                                
                                     ";
 
                                 $query5 = "SELECT  documentosestudiantes.id,file,type_document
@@ -235,7 +227,6 @@
                                 $consulta5 = mysqli_query($conexion,$query5);
                                 //$array3 = mysqli_fetch_array($consulta5);
 
-                                
                                 require 'partials/_view_documentation.php';
                                 require 'partials/_add_register.php';  
                                 require 'partials/_upload_resource.php';                         
@@ -251,5 +242,4 @@
 </div>
 
 <a href=""></a>
-
     <!-- [ sample-page ] end -->

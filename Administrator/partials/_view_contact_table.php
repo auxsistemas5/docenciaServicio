@@ -26,7 +26,7 @@
                             ?> 
                                 
                             <tr>
-                            
+                                <?php //eliminar contacto de la institucion ?>
                                 <td hidden><input name="id" type="text" value="<?php echo $dates['id']?>"></td>
                                 <td><?php echo $dates['name']?></td>
                                 <td><?php echo $dates['position']?></td>

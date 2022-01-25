@@ -99,9 +99,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-9">
                         <label for="">Observaciones:</label>
                         <input type="text" class="form-control" name="observation">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Califica Estudiantes:</label>
+                        <select name="calification" class="form-control">
+                            <option value="1">SI</option>
+                            <option value="0">NO</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row col-md-3 mt-2">
