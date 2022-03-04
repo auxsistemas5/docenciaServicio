@@ -35,6 +35,7 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/customizer.css">
+    <link rel="stylesheet" href="../assets/sweetalert/dist/sweetalert2.min.css">
     <script language="JavaScript">
         window.history.forward();
     </script>
@@ -119,7 +120,6 @@
     <script src="../assets/js/plugins/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/feather.min.js"></script>
     <script src="../assets/js/pcoded.min.js"></script>
-    <script src="../https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="../assets/js/plugins/clipboard.min.js"></script>
     <script src="../assets/js/uikit.min.js"></script>
 
@@ -129,6 +129,37 @@
 
 <!-- custom-chart js -->
 <script src="../assets/js/pages/dashboard-sale.js"></script>
+
+<script src="../assets/sweetalert/dist/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $("#ingreso").submit(function(e){
+
+        
+
+        if($("#nombre").val() == "" || $("#documento").val() == "" || $("#correo").val() == ""){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'EL CAMPO NO PUEDE ESTAR VACIO',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        
+        
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'formulario accesible',
+            showConfirmButton: false,
+            timer: 1500
+        })
+       
+    })
+</script>
 </body>
+
 
 </html>

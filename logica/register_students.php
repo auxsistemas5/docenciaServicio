@@ -11,37 +11,51 @@
     $formation = strtoupper( $_POST['formation']);
     $email = strtoupper( $_POST['email']);
     $anexo = strtoupper( $_POST['anexo']);
-    
-    //$admision = $_POST['admission_date'];
-    //$finish = $_POST['finish_date'];
-    $verificacion = "SELECT document FROM usuarios WHERE document = '$document' ";
-    $execute = mysqli_query($conexion, $verificacion);
-    $row = mysqli_fetch_array($execute);
 
-    if($row[0] != $document){
+    $dir_subida = '../uploads/estudiantes/fotos/';
+    $file = $dir_subida . basename($_FILES['file']['name']);
 
-        $consulta = "INSERT INTO usuarios(username,document,password,phone,id_institucion,position,formation,email,anexo) 
-                        VALUES ('$username',
-                                '$document',
-                                '$password',
-                                '$phone',
-                                '$id_institucion',
-                                '$position',
-                                '$formation',
-                                '$email',
-                                '$anexo'
-                                    )";
+    echo '<pre>';
+    if (move_uploaded_file($_FILES['file']['tmp_name'], $file)) {
     
-        $ejecutar = mysqli_query($conexion,$consulta);
-        //$verFilas = mysqli_fetch_array($ejecutar,$consulta);
+        $verificacion = "SELECT document FROM usuarios WHERE document = '$document' ";
+        $execute = mysqli_query($conexion, $verificacion);
+        $row = mysqli_fetch_array($execute);
     
-        if(!$ejecutar){
-            echo '<script language="javascript">alert("Error, no se creo Verifique nuevamente");window.location.href="../Administrator/register_students.php"</script>';
+        if($row[0] != $document){
+    
+            $consulta = "INSERT INTO usuarios(username,document,password,phone,id_institucion,position,formation,email,anexo,photo) 
+                            VALUES ('$username',
+                                    '$document',
+                                    '$password',
+                                    '$phone',
+                                    '$id_institucion',
+                                    '$position',
+                                    '$formation',
+                                    '$email',
+                                    '$anexo',
+                                    '$file'
+                                        )";
+        
+            $ejecutar = mysqli_query($conexion,$consulta);
+            //$verFilas = mysqli_fetch_array($ejecutar,$consulta);
+        
+            if(!$ejecutar){
+                echo '<script language="javascript">alert("Error, no se creo Verifique nuevamente");window.location.href="../Administrator/register_students.php"</script>';
+            }else{
+                echo '<script language="javascript">alert("Se Creo Usuario con exito");window.location.href="../Administrator/register_students.php"</script>';
+            }
         }else{
-            echo '<script language="javascript">alert("Se Creo Usuario con exito");window.location.href="../Administrator/register_students.php"</script>';
+            echo '<script language="javascript">alert("Error no se creo documento duplicado");window.location.href="../Administrator/register_students.php"</script>';
         }
-    }else{
-        echo '<script language="javascript">alert("Error no se creo documento duplicado");window.location.href="../Administrator/register_students.php"</script>';
+        
+    } else {
+        
+        echo '<script language="javascript">alert("Error no se subio la foto valide nuevamente la informacion");window.location.href="../Administrator/register_students.php"</script>';
     }
     
+    print "</pre>";
+    
+    
+   
 ?>

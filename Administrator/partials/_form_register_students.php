@@ -5,29 +5,33 @@
                             <h3 class="text-white">REGISTRAR ESTUDIANTE:</h3>
                         </div>
                         <div class="card-body">
-                            <form action="../logica/register_students.php" method="POST">
+                            <form id="ingreso" enctype="multipart/form-data" action="../logica/register_students.php" method="POST">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="" class="form-label">Nombre Completo:</label>
-                                            <input type="text" class="form-control" placeholder="" name="username" required >
+                                            <input id="nombre" type="text" class="form-control" placeholder="" name="username"  >
                                         </div>
-                                        <div class=" col-md-6">
+                                        <div class=" col-md-3">
                                             <label for="" class="form-label">Documento:</label>
-                                            <input type="text" class="form-control" name="document" required>
+                                            <input type="text" class="form-control" name="document" id="documento">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="">Foto</label>
+                                            <input type="file" name="file" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-12 col-md-5">
                                            <label for="" class="form-label">Correo:</label>
-                                            <input type="text" class="form-control" name="email">
+                                            <input id="correo" type="text" class="form-control" name="email">
 
                                         </div>
                                         
                                         <div class="form-group col-md-4">
                                             <label for="" class="form-label">Contraseña:</label>
-                                            <input type="password" class="form-control" name="password" required>
+                                            <input type="password" class="form-control" name="password" >
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="" class="form-label">Celular:</label>
@@ -38,7 +42,7 @@
                                     
                                         <div class="col-md-4">
                                             <label for="inputState" class="form-label">Institucion</label>
-                                            <select class="form-control form-select" name ="id_institucion" required>
+                                            <select class="form-control form-select" name ="id_institucion" >
                                                 <option>Seleccione</option>
                                                 <?php
                                                     require '../logica/conexion.php';
@@ -65,7 +69,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-3">
-                                            <label for="inputState" class="form-label">Cargo:</label>
+                                            <label for="inputState" class="form-label">Rol:</label>
                                             <select class="form-control"  name="position" placeholder="Seleccione">
                                                 <option value="ESTUDIANTE">Estudiante</option>
                                                 <option value="INTERNO">Interno</option>
@@ -77,7 +81,7 @@
                                             <select class="form-control" name="formation" placeholder="Seleccione">
                                                 <option value="TÉCNICO">Técnico</option>
                                                 <option value="TECNOLOGO">Tecnologo</option>
-                                                <option value="PREGRADO">Profesional</option>
+                                                <option value="PREGRADO">Pregrado</option>
                                                 <option value="POSTGRADO">PostGrado</option>
                                             </select>
                                         </div>  

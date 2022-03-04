@@ -6,15 +6,15 @@
         <div class="">
             <div class="form-group">
                 <div class="form-group col-md-6">
-                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" >
+                    <form id="buscar" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" >
                         <label for="">Verificar documento: </label>
                         <div class=" form-group input-group">
-                            <input type="text" class="form-control" name="document">
+                            <input id="search" type="text" class="form-control" name="document">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
                                 </button>
                                 <!--Refresca la pagina para borrar los datos de la pantalla-->
-                                <button class="btn btn-danger" onclick="setTimeout(function(){location.reload();}, 3000);">Refresh</button>
+                                <button  class="btn btn-danger" onclick="setTimeout(function(){location.reload();}, 3000);">Refresh</button>
                             </span>
                         </div>
                     </form>
@@ -31,13 +31,18 @@
                             $consulta = mysqli_query($conexion,$query);
                             $array = mysqli_fetch_array($consulta);
 
-                            //echo $array[0];
                             
+
+                            //echo $array[0];
+                            sleep(2);
                             if(!$array){
-                                echo "<div class='alert alert-danger'>
+                                echo "<div class='container alert alert-danger'>
                                         Usuario no encontrado.
                                     </div>";    
                             }else{
+                                echo "<div class='container alert alert-success'>
+                                        Usuario encontrado.
+                                    </div>";  
                                 $id = $array[0];
 
                                 $query2 = "SELECT name,acronym FROM usuarios
@@ -51,6 +56,9 @@
 
                                 $query4 = "SELECT * FROM servicios ";
                                 $consulta4 = mysqli_query($conexion,$query4);
+
+                                $queryinsti = "SELECT * FROM instituciones";
+                                $consultaInsti = mysqli_query($conexion, $queryinsti); 
 
                                 if($array[5] != ""){
                                     if($array[5] == 1){
@@ -131,14 +139,25 @@
                                     $res1 = "NO";
                                     $res2 = "SI";
                                 }
-                                
+
+                                if($array[12] == "NULL"){
+                                    $img1 = "/resources/user.png";
+                                }else{
+                                    $img1 = $array[12];
+                                }
                                 
                                 echo"<div class='card-body '>
                                     <div class='card bg-light col-md-12'>
                                         <div class='mt-2 '>
                                             <h4 >DATOS DEL ESTUDIANTE:</h4>
-                                        </div>
-                                        <form class='form-v1' action='../logica/update_students.php' method='POST'>
+                                        </div> 
+                                        
+                                        <form enctype='multipart/form-data' class='form-v1' action='../logica/update_students.php' method='POST'>
+                                            <div class=''>
+                                                <div class='form-group col-md-6'>
+                                                    <img src='$img1' width='120px' height='120px'  style='border-radius:0px;border:2px solid #black;'>
+                                                </div>
+                                            <div
                                             <div class='row'>
                                                 <div class='form-group col-md-6'>
                                                     <input value='$id' name='id' hidden>
@@ -170,13 +189,19 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <div class='form-group col-md-4'>
+                                                <div class='form-group col-md-3'>
                                                     <b>Telefono:</b><input name='phone' class='form-control' value='$array[6]' >
                                                 </div>
-                                                <div class='form-group col-md-4'>
-                                                    <b>Instucion:
+                                                <div class='form-group col-md-5'>
+                                                    <b>Institución:
                                                     <select name='id_institucion' class='form-control'>
-                                                        <option class='form-control'value='$array[7]' >$array2[0]</option>
+                                                        <option class='form-control'value='$array[7]' >$array2[0]</option>";
+                                                        while($datosIns = mysqli_fetch_array($consultaInsti)){
+                                                            ?>
+                                                            <option value="<?php echo $datosIns['id'] ?>"><?php echo $datosIns['name']; ?></option>
+                                                            <?php
+                                                        }
+                                                    echo "
                                                     </select>
                                                 </div>
                                             </div>
@@ -203,13 +228,17 @@
                                                     
                                                 </div>
                                                 
-                                                <div class='form-group '>
+                                                <div class=' form-group'>
                                                     <b>Anexo:
                                                     <select class='form-control' name='anexo'>
                                                         <option  value='$array[11]' selected='selected' >$array[11]</option>
                                                         <option  value='$res2' >$res2</option>
                                                     </select>
                                                 </div>
+                                            </div>
+                                            <div class='col-md-3 form-group'>
+                                                <b>Actualizar Foto Foto</b>
+                                                <input type='file' name='file'>
                                             </div>
                                             <div class='mt-2 panel-footer'>
                                                 <button type='submit' name='actualizar' class='btn btn-success'>Actualizar</button>
