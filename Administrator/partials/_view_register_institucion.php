@@ -18,7 +18,7 @@
                 <div class="col-md-12 offset-md">
                     <form  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                         <div class="container mt-2">
-                            <label for="">Buscar Datos de la Institucion</label>
+                            <label class="text-white" for="">Buscar Datos de la Institucion</label>
                             <div class=" form-group input-group">
                                 <Select name="name" class="form-control form-select">
                                 <?php 
@@ -49,7 +49,7 @@
 
                         
 
-                        $consul = "SELECT instituciones_contacto.id,instituciones_contacto.name,instituciones_contacto.position,instituciones_contacto.email,instituciones_contacto.phone
+                        $consul = "SELECT instituciones_contacto.id,instituciones_contacto.name,instituciones_contacto.position,instituciones_contacto.email,instituciones_contacto.phone, instituciones.logo
                         FROM instituciones_contacto
                         INNER JOIN instituciones
                         ON instituciones_contacto.id_institucion = instituciones.id WHERE instituciones.id = $res[0]";
@@ -66,7 +66,12 @@
                                     </div>
                                     <div class='card-body'>
                                         <div class=' '>
-                                            <form action='../logica/update_institution.php' method='POST'>
+                                            <form action='../logica/update_institution.php' method='POST'  enctype='multipart/form-data'>
+                                                <div class='row'>
+                                                    <div class='col-md-3'>
+                                                        <img src='$res[11]' width='120px' height='120px'  style='border-radius:0px;border:2px solid #black;'>
+                                                    </div>
+                                                </div>
                                                 <div class='row'>
                                                     <input name='id' value='$res[0]' hidden>
                                                     <div class='col-md-6'>
@@ -108,6 +113,12 @@
                                                     <div class='col-md-4'>
                                                         <label for=''>Sede</label>
                                                         <input name='campus' class='form-control' type='text' value='$res[9]'>
+                                                    </div>
+                                                </div> <br>
+                                                <div class='row'>
+                                                    <div class='col-md-5'>
+                                                        <label for=''><b>Actualizar Logo</b></label>
+                                                        <input type='file' name='file' >
                                                     </div>
                                                 </div>
                                                 <div class='row mt-2'>

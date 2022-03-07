@@ -5,7 +5,7 @@
                             <h3 class="text-white">REGISTRAR INSTITUCION:</h3>
                         </div>
                         <div class="card-body">
-                            <form action="../logica/register_institution.php" method="POST">
+                            <form action="../logica/register_institution.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -18,7 +18,7 @@
                                         </div>
                                         <div class=" col-md-3">
                                             <label for="" class="form-label">Inicio Convenio: </label>
-                                            <input type="date" class="form-control" name=" required">
+                                            <input type="date" class="form-control" name="agreement" required>
                                         </div>
                                         
                                     </div>
@@ -29,13 +29,17 @@
                                         </div>
 
                                         
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-2">
                                             <label for="" class="form-label">Telefono:</label>
                                             <input type="text" class="form-control" name="phone" required>
                                         </div>
-                                        <div class="form-group col-md-5">
+                                        <div class="form-group col-md-3">
                                             <label for="" class="form-label">NIT:</label>
                                             <input type="text" class="form-control" name="nit" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="" class="form-label">LOGO:</label>
+                                            <input type="file" class="form-control" name="file" required>
                                         </div>
                                     </div>
                                     <div class ="row">

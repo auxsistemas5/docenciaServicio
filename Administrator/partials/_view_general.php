@@ -4,7 +4,7 @@
         <div class="card">
             <!--<iframe src="" style="width:100%; height:450px;" embedded=true frameborder="0" embebed></iframe>-->
             <div class="card-header">
-                <h4><b>VISTA GENERAL</b></h4>
+                <h4><b>VER ESTUIANTES EN GENERAL</b></h4>
             </div>
             <div class="card-body">
                 <h4><b>USUARIOS ACTIVOS</b></h4>

@@ -47,7 +47,8 @@
 						<ul class="pc-submenu">
 							<li class="pc-item"><a class="pc-link" href="register_students.php">Informacion</a></li>
 							<li class="pc-item"><a class="pc-link" href="view_registers_students.php">Registros</a></li>
-							<li class="pc-item"><a class="pc-link" href="view_general_personal.php">Vista General</a></li>
+							<li class="pc-item"><a class="pc-link" href="view_general_personal.php">Consulta General</a></li>
+							<li class="pc-item"><a class="pc-link" href="view_especifica.php">Consulta Especifica</a></li>
 						</ul>
 					</li>
                     <li class="pc-item pc-hasmenu">
