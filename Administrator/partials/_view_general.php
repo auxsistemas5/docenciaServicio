@@ -11,11 +11,9 @@
                 <div>
 
                     <?php 
-<<<<<<< HEAD
-                        $query = "SELECT usuarios.id, usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 ";
-=======
+
                         $query = "SELECT usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 ";
->>>>>>> 46e9c2b09a989bbe97a1161e011188dce5a03091
+
                         
                         $validarUsers = mysqli_query($conexion, $query);
                         
@@ -26,18 +24,13 @@
                                 <tr>
                                     <th>NOMBRE</th>
                                     <th>DOCUMENTO</th>
-<<<<<<< HEAD
+
                                     
                                     <th>ROL</th>
                                     
                                     <th>INSTITUCIÓN</th>
                                     <th>ACCIÓN</th>
-=======
-                                    <th>FORMACIÓN</th>
-                                    <th>CARGO</th>
-                                    <th>CORREO</th>
-                                    <th>INSTITUCIÓN</th>
->>>>>>> 46e9c2b09a989bbe97a1161e011188dce5a03091
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +38,6 @@
                                 <tr>
                                     <td><?php echo $datosUsuarios['username'] ?></td>
                                     <td><?php echo $datosUsuarios['document'] ?></td>
-<<<<<<< HEAD
 
                                     <td><?php echo $datosUsuarios['position'] ?></td>
 
@@ -53,12 +45,7 @@
                                 
                                     <td><a href="view_details_student.php?id=<?php echo $id = $datosUsuarios['id']?>"class="btn btn-success btn-sm" >VER</a></td>
                                     
-=======
-                                    <td><?php echo $datosUsuarios['formation'] ?></td>
-                                    <td><?php echo $datosUsuarios['position'] ?></td>
-                                    <td><?php echo $datosUsuarios['email'] ?></td>
-                                    <td><?php echo $datosUsuarios['acronym'] ?></td>
->>>>>>> 46e9c2b09a989bbe97a1161e011188dce5a03091
+
                                 </tr>
                                 <?php
                                     }
