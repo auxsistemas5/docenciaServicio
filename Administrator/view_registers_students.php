@@ -67,6 +67,12 @@
             <!-- [ Main Content ] end -->
         </div>
     </div>
+    <script>
+        $("#registro").submit(function(e){
+            e.preventDefault();
+            alert("info");
+        });
+    </script>
 <!-- [ Main Content ] end -->
 
     <!-- Warning Section start -->

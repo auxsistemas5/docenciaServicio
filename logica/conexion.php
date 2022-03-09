@@ -2,7 +2,7 @@
 $host = "localhost";
 $usuario = "root";
 $clave = "";
-$bd = "appdocencia";
+$bd = "docenciaservicio";
 
 $conexion = mysqli_connect($host, $usuario, $clave, $bd);
 

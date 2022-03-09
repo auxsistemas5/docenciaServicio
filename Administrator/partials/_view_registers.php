@@ -8,7 +8,7 @@
             </div>
             <div class=" row">
                 <div class="col-md-12">
-                    <form class="col-md-12 offset-md"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+                    <form id="registro" class="col-md-12 offset-md"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                         <label for="container">Buscar Registro de Estudiante</label>
                         <div class=" form-group input-group">
                             <input type="text" class="form-control" name="document" placeholder="Documento">

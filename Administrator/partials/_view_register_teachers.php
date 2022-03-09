@@ -63,10 +63,11 @@
 
 
 
-                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_teacher,docentes.type_prog,docentes.observation,docentes.calification
+                            $con2 = "SELECT docentes.id,docentes.name,document,id_institution,docentes.start,docentes.end,type_vinc,instituciones.name,docentes.state,docentes.type_servi,docentes.type_prog,docentes.observation,docentes.calification, docentes.foto
                             FROM docentes
                             INNER JOIN instituciones
-                            ON docentes.id_institution = instituciones.id where instituciones.id = '$institution'";
+                            ON docentes.id_institution = instituciones.id
+                             where instituciones.id = '$institution'";
 
                             $sq2 = mysqli_query($conexion,$con2);
                             $dates2 = mysqli_fetch_array($sq2);
@@ -74,13 +75,19 @@
                             $programa = $dates[11];
                             $servicio = $dates[8];
 
-                            $sqlP = "SELECT programs_name FROM programas where id = $programa ";
+                            $sqlP = "SELECT id,programs_name FROM programas where id = $programa ";
                             $resP = mysqli_query($conexion,$sqlP);
                             $prog = mysqli_fetch_array($resP);
 
-                            $sqlS = "SELECT services_name FROM servicios where id = $servicio ";
+                            $sqlS = "SELECT id, services_name FROM servicios where id = $servicio ";
                             $resS = mysqli_query($conexion,$sqlS);
                             $proS = mysqli_fetch_array($resS);
+
+                            $sqlprog = "SELECT * FROM programas";
+                            $resprog = mysqli_query($conexion, $sqlprog);
+
+                            $sqlservice = "SELECT * FROM servicios";
+                            $resservice = mysqli_query($conexion, $sqlservice);
 
                             
 
@@ -173,7 +180,12 @@
                                             <h4>INFORMACION DEL ESPECIALISTA</h4>
                                         </div>
                                         <div class='card-body'>
-                                            <form action='../logica/update_teacher.php' method='POST'>
+                                            <form enctype='multipart/form-data' action='../logica/update_teacher.php' method='POST'>
+                                                <div class='row'>
+                                                    <div class='form-group col-md-6'>
+                                                        <img id='foto' src='$dates2[13]' width='120px' height='120px'  style='border-radius:0px;border:2px solid #black;'>
+                                                    </div>
+                                                </div>
                                                 <div class='row'>
                                                     <input type='text' name='id' value='$dates2[0]' hidden>
                                                     <div class='col-md-6'>
@@ -217,13 +229,24 @@
                                                     <div class='col-md-4'>
                                                         <label for=''>Programa:</label>
                                                         <select name='type_prog' id='' class='form-control'>
-                                                            <option class='form-control' type='text' value='$dates[11]' name=''>$prog[0]</option>
+                                                            <option class='form-control' type='text' value='$dates[11]' name=''>$prog[1]</option>";
+                                                            while($datoprog = mysqli_fetch_array($resprog)){
+                                                                echo "<option type='text' value=".$datoprog['id'].">$datoprog[1]</option>";
+                                                            }
+
+                                                            echo "
                                                         </select>
                                                     </div>
                                                     <div class='form-group col-md-4'>
                                                         <label for=''>Servicio:</label>
                                                         <select name='type_teacher' id='' class='form-control'>
-                                                            <option type='text' value='$dates[8]'  class='form-control'>$proS[0]</option>
+                                                            <option type='text' value='$dates[8]'  class='form-control' selected>$proS[1]</option>
+                                                            ";
+                                                            while($datoServi = mysqli_fetch_array($resservice)){
+                                                                echo "<option type='text' value=".$datoServi['id'].">$datoServi[1]</option>";
+                                                            }
+                                                            echo "
+                                                            
                                                         </select>
                                                     </div>
                                                     <div class='col-md-4 form-group'>
@@ -257,6 +280,12 @@
                                                     </div>
                                                 </div>
                                                 <div class='row'>
+                                                    <div class='form-group col-md-12'>
+                                                        <label for=>Actualizar Foto:</label>
+                                                        <input class='form-control' type='file'  name='foto'>
+                                                    </div>
+                                                </div>
+                                                <div class='row'>
                                                     <div>
                                                         <button class='btn btn-success'>Actualizar</button>
                                                     </div>
@@ -283,5 +312,7 @@
     </div>
 </div>
 <?php require '_form_register_teacher.php';?>
+
+
 
 

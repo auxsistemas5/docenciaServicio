@@ -4,8 +4,8 @@
 		</div>
 	</div>
 	<div class="pc-mob-header pc-header">
-		<div class="pcm-logo">
-			<img src="assets/images/logo.svg" alt="" class="logo logo-lg">
+		<div hidde class="pcm-logo">
+			
 		</div>
 		<div class="pcm-toolbar">
 			<a href="#!" class="pc-head-link" id="mobile-collapse">
@@ -47,8 +47,8 @@
 						<ul class="pc-submenu">
 							<li class="pc-item"><a class="pc-link" href="register_students.php">Informacion</a></li>
 							<li class="pc-item"><a class="pc-link" href="view_registers_students.php">Registros</a></li>
-							<li class="pc-item"><a class="pc-link" href="view_general_personal.php">Vista General</a></li>
-							
+							<li class="pc-item"><a class="pc-link" href="view_general_personal.php">Consulta General</a></li>
+							<li class="pc-item"><a class="pc-link" href="view_especifica.php">Consulta Especifica</a></li>
 						</ul>
 					</li>
                     <li class="pc-item pc-hasmenu">

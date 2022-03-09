@@ -24,28 +24,33 @@
     
     <?php
         //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
-        $fecha = date("Y-n-d");
-        $sqlDisabled = "SELECT usuarios.id,finish_date FROM registro INNER JOIN usuarios ON registro.id_user = usuarios.id 
-         WHERE usuarios.state = 1 AND finish_date = '$fecha'";
+        $fecha = date("Y-m-d");
+        $sqlDisabled = "SELECT usuarios.id,usuarios.state,registro.finish_date FROM registro INNER JOIN usuarios ON registro.id_user = usuarios.id 
+         WHERE usuarios.state = 1 ";
 
         $consultaDisabled = mysqli_query($conexion,$sqlDisabled);
-
+        $compa1 = mysqli_fetch_array($consultaDisabled);
+        $cuenta = 0;
         if($consultaDisabled){
-
             while($datesDisabled = mysqli_fetch_array($consultaDisabled)){
-                $id = $datesDisabled['finish_date'];
-                $disabled = "UPDATE usuarios SET state = 0 WHERE id = '$id' ";
-                $consultaDis = mysqli_query($conexion,$disabled);
+                
+                if($fecha > $datesDisabled['finish_date']){
+                        $id = $datesDisabled[0];
+                        $disabled = "UPDATE usuarios SET state = 0 WHERE id = '$id' ";
+                        $consultaDis = mysqli_query($conexion,$disabled);
+        
+                        if($consultaDis){
+                            echo '<script language="javascript">Console.log("Se desabilitaron usuarios")</script>';
 
-                if($consultaDis){
-                    echo "<div class='alert alert-warning'>
-                            Se desabilitaron Estudiantes por que finalizaron segun la fecha
-                        </div>"; 
+                        }
                 }
+                $cuenta++;
+            
+                echo "<script language='javascript'>Console.log('Se desabilitaron usuarios '".$cuenta.")</script>"; 
             }
-                echo "<div class='alert alert-success'>
-                       Sin Novedades
-                    </div>"; 
+
+            
+
             
         }else if(!$consultaDisabled){
             echo "<div class='alert alert-success'>

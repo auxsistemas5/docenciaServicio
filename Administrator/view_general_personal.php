@@ -38,9 +38,6 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/customizer.css">
-    <script language="JavaScript">
-        window.history.forward();
-    </script>
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 
@@ -148,4 +145,11 @@
     $(document).ready( function () {
         $('#tableD').DataTable();
     } );
+
+    $("#validar").click(function(){
+        user = $("#id_user").val();
+
+        console.log(user);
+        user = 0;
+    })
 </script>

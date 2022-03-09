@@ -131,6 +131,16 @@
 
 <!-- custom-chart js -->
 <script src="../assets/js/pages/dashboard-sale.js"></script>
+<script>
+    img = document.getElementById('foto');
+    $('#foto').click(function(){
+        /*if(img.style.transform == 'scale(1.9)'){
+            img.style.transform = 'scale(1)';
+        }else{
+            img.style.transform = 'scale(1.9)';
+        }*/
+    });
+</script>
 </body>
 
 </html>
