@@ -46,6 +46,10 @@
                 }
                 $cuenta++;
             
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46e9c2b09a989bbe97a1161e011188dce5a03091
                 echo "<script language='javascript'>Console.log('Se desabilitaron usuarios '".$cuenta.")</script>"; 
             }
 
