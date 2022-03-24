@@ -4,7 +4,7 @@
         <div class="card">
             <!--<iframe src="" style="width:100%; height:450px;" embedded=true frameborder="0" embebed></iframe>-->
             <div class="card-header">
-                <h4><b>VER ESTUIANTES EN GENERAL</b></h4>
+                <h4><b>VER ESTUDIANTES EN GENERAL</b></h4>
             </div>
             <div class="card-body">
                 <h4><b>USUARIOS ACTIVOS</b></h4>
@@ -12,7 +12,7 @@
 
                     <?php 
 
-                        $query = "SELECT usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 ";
+                        $query = "SELECT usuarios.id,usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 1 ";
 
                         
                         $validarUsers = mysqli_query($conexion, $query);
@@ -43,7 +43,7 @@
 
                                     <td><?php echo $datosUsuarios['acronym'] ?></td>
                                 
-                                    <td><a href="view_details_student.php?id=<?php echo $id = $datosUsuarios['id']?>"class="btn btn-success btn-sm" >VER</a></td>
+                                    <td><a href="view_details_student.php?id=<?php echo $datosUsuarios['id'] ?>" class="btn btn-success btn-sm">VER</a></td>
                                     
 
                                 </tr>

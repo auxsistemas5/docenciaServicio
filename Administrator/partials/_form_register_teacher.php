@@ -15,33 +15,6 @@
                         <input class="form-control" type="text" name="document" required>
                     </div>
                     <div class="col-md-3">
-                        <label for="">Institución:</label>
-                        <Select name="id_institution" class="form-control form-select">
-                            <?php 
-                             require '../logica/conexion.php';
-
-                             $sqlD = "SELECT id,name FROM instituciones";
-                             $resD = mysqli_query($conexion,$sqlD);                         
-                            
-                            while($mostrarD = mysqli_fetch_array($resD)){
-                            ?>
-                                <option class="" value="<?php echo $mostrarD['id'] ?>"><?php echo $mostrarD['name'] ?></option>                            
-                            <?php
-                            }
-                            ?>
-                        </Select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label for="">Fecha Inico:</label>
-                        <input class="form-control" type="date" name="start" >
-                    </div>
-                    <div class="col-md-3">
-                        <label for="">Fecha Finalización:</label>
-                        <input class="form-control" type="date" name="end" >
-                    </div>
-                    <div class="col-md-3">
                         <label for="">Tipo de Vinculación:</label>
                         <select name="type_vinc" id="" class="form-control">
                             <option value="">NINGUNO</option>
@@ -53,6 +26,14 @@
                             <option value="ASESOR">ASESOR</option>
                         </select>
                     </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Foto:</label>
+                        <input type="file" class="form-control" name="file">
+                    </div>
+                    
                     <div class="col-md-3">
                         <label for="">Servicio:</label>
                         <Select name="type_teacher" class="form-control form-select">
@@ -70,8 +51,6 @@
                             ?>
                         </Select>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-md-3">
                         <label for="">Programa:</label>
                         <Select name="type_prog" class="form-control form-select">
@@ -89,23 +68,16 @@
                             ?>
                         </Select>
                     </div>
-                    <div class="col-md-4">
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-6">
                         <label for="">Correo:</label>
                         <input type="text" class="form-control" name="email">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <label for="">Telefono:</label>
                         <input type="text" class="form-control" name="phone">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="">Foto:</label>
-                        <input type="file" class="form-control" name="file">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9">
-                        <label for="">Observaciones:</label>
-                        <input type="text" class="form-control" name="observation">
                     </div>
                     <div class="col-md-3">
                         <label for="">Califica Estudiantes:</label>
@@ -114,6 +86,41 @@
                             <option value="0">NO</option>
                         </select>
                     </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Tiene Estudiantes:</label>
+                        <select name="tiene_estudiantes" id="" class="form-control">
+                            <option value="SI">SI</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <?php
+                            $sqlin = "SELECT * FROM instituciones";
+                            $resultin = mysqli_query($conexion, $sqlin);
+                        ?>
+                        <label for="">Institución:</label>
+                        <select name="id_institucion" id="" class ="form-control">
+                             <option value="0">no aplica</option>
+                             <?php
+                                while($datosin = mysqli_fetch_array($resultin)){
+
+                                    ?>
+                                     <option value="<?php echo $datosin['id'] ?>"><?php echo$datosin['name'] ?></option>
+                                    <?php
+                                }
+                             ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="">Observaciones:</label>
+                        <input type="text" class="form-control" name="observation">
+                    </div>
+                    
                 </div>
                 <div class="row col-md-3 mt-2">
                     <div>

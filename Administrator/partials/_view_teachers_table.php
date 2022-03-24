@@ -1,24 +1,27 @@
+<div class="table-responsive">
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h4>Docentes Activos</h4>
+            <h4>Especialistas Activos</h4>
         </div>
         <div class="card-body">
-            <table class="" border="1" styles="justify-content: center;">
+            <div class="table-responsive">
+            <table id="table-docentes" class="" border="1" styles="justify-content: center;">
                 <thead>
                     <th>NOMBRE</th>
-                    <th>INSTITUCIÓN</th>
-                    <th>PROGRAMA</th>
+                    <th>DOCUMENTO</th>
                     <th>VINCULACIÓN</th>
+                    <th>PROGRAMA</th>
                     <th>SERVICIO</th>
+                    <th>INSTITUCION</th>
                 </thead>
                 <tbody>
             
                 <?php
                     require '../logica/conexion.php';
                     while($responReg = mysqli_fetch_array($resReg)){
-                    $insti =$responReg['id_institution'];
-                    $servi = $responReg['type_teacher'];
+                    $insti =$responReg['institucion_asociada'];
+                    $servi = $responReg['type_servi'];
                     $prog = $responReg['type_prog'];
 
                     $sqlProg = "SELECT name FROM instituciones WHERE id = '$insti'";
@@ -34,11 +37,12 @@
                     $datProg2 = mysqli_fetch_array($resProg2);
                 ?>
                 <tr>
-                    <td><?php echo $responReg['name']?></td>
-                    <td><?php echo $datProg[0] ?></td>
-                    <td><?php echo $datProg2[0]?></td>
+                    <td><?php echo $responReg['name'];?></td>
+                    <td><?php echo $responReg['document'] ?></td>
                     <td><?php echo $responReg['type_vinc'] ?></td>
+                    <td><?php echo $datProg2[0]?></td>
                     <td><?php echo $datProg1[0]?></td>
+                    <td><?php echo $datProg['name'] ?></td>
 
                 </tr>
                 <?php
@@ -46,7 +50,9 @@
                 ?>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 
+</div>
 </div>

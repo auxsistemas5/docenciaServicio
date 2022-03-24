@@ -23,6 +23,7 @@
 <div class="col-sm-12">
     
     <?php
+    /*
         //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
         $fecha = date("Y-m-d");
         $sqlDisabled = "SELECT usuarios.id,usuarios.state,registro.finish_date FROM registro INNER JOIN usuarios ON registro.id_user = usuarios.id 
@@ -46,10 +47,7 @@
                 }
                 $cuenta++;
             
-<<<<<<< HEAD
-=======
 
->>>>>>> 46e9c2b09a989bbe97a1161e011188dce5a03091
                 echo "<script language='javascript'>Console.log('Se desabilitaron usuarios '".$cuenta.")</script>"; 
             }
 
@@ -65,7 +63,7 @@
                        Sin Novedades
                     </div>"; 
         }
-    
+    */
         ?>
     
     <div class="card  bg-info">
@@ -167,13 +165,5 @@
         </div>
     </div>
 </div>
-<?php
-    require '../logica/conexion.php';
 
-    $sqlReg = "SELECT * FROM docentes WHERE state = 1";
-    $resReg = mysqli_query($conexion,$sqlReg);
-                              
-    require '_view_teachers_table.php';
-
-?>
 

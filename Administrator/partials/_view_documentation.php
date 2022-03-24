@@ -18,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <form action="../logica/delete_documentation_user.php" method="POST">
+                        <div>
                             <?php 
                             while($mostrar = mysqli_fetch_array($consulta5)){
                             ?>
@@ -29,13 +29,13 @@
                                 <td><a href="<?php echo $mostrar['file'] ?>" target="_blank" rel="noopener noreferrer">Ver Documento</a></td>
 
                                 
-                                     <td><button class="btn btn-danger"><i data-feather="trash-2"></button></td>
+                                     <td><a href="../logica/delete_documentation_user.php?id=<?php echo $mostrar['id']?>" class="btn btn-danger"><i data-feather="trash-2"></a></td>
                                 
                             </tr>
                             <?php
                             }
                             ?>
-                        </form>
+                        </div>
                     </tbody>
                 </table>
             </div>
