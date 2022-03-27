@@ -154,4 +154,7 @@
     $(document).ready( function () {
         $('#table-docentes').DataTable();
     } );
+    $(document).ready( function () {
+        $('#table-inac').DataTable();
+    } );
 </script>

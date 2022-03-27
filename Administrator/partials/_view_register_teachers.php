@@ -326,6 +326,9 @@
 
     $sqlReg = "SELECT * FROM docentes WHERE state = 1";
     $resReg = mysqli_query($conexion,$sqlReg);
+
+    $sqlInac = "SELECT * FROM docentes WHERE state = 0";
+    $sqlresInac = mysqli_query($conexion, $sqlInac);
                               
     require '_view_teachers_table.php'
 
