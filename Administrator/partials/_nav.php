@@ -49,6 +49,7 @@
 							<li class="pc-item"><a class="pc-link" href="view_registers_students.php">Registros</a></li>
 							<li class="pc-item"><a class="pc-link" href="view_general_personal.php">Consulta General</a></li>
 							<li class="pc-item"><a class="pc-link" href="view_especifica.php">Consulta Especifica</a></li>
+							<li class="pc-item"><a class="pc-link" href="inspection.php">Inspeccion Estudiantes</a></li>
 						</ul>
 					</li>
                     <li class="pc-item pc-hasmenu">
@@ -60,7 +61,7 @@
 						</ul>
 					</li>
 					<li class="pc-item">
-						<a href="register_teachers.php" class="pc-link "><span class="pc-micon"><i data-feather="user"></i></span><span class="pc-mtext">Especialistas</span></a>
+						<a href="register_teachers.php" class="pc-link "><span class="pc-micon"><i data-feather="user"></i></span><span class="pc-mtext">Docentes y Asistenciales</span></a>
 					</li>
 					<li class="pc-item pc-hasmenu">
 						<a href="#!" class="pc-link "><span class="pc-micon"><i data-feather="edit"></i></span><span class="pc-mtext">Evaluaciones</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
