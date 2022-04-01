@@ -54,13 +54,15 @@
             <div class="row">
                 <div class="col-md-12 form-group">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="table-maestros">
                             <thead>
                                 <tr>
                                     <th>DOCENTE</th>
                                     <th>INTERNO</th>
                                     <th>CONOCIMIENTO</th>
                                     <th>ACTITUD</th>
+                                    <th>SEMINARIO</th>
+                                    <th>OBSERVACIONES</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,6 +81,8 @@
                                     <td><?php echo $mostrarResultados['student'];  ?></td>
                                     <td><?php echo $mostrarResultados['result_conocimiento'];  ?></td>
                                     <td><?php echo $mostrarResultados['result_actitud'];  ?></td>
+                                    <td><?php echo $mostrarResultados['result_seminario'];  ?></td>
+                                    <td><?php echo $mostrarResultados['observacion'];  ?></td>
                                 </tr>
                                 <?php
                                         }
