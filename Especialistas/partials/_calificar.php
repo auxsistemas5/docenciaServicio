@@ -29,6 +29,7 @@
                     <thead>
                         <tr>
                             <th>NOMBRE</th>
+                            <th>FOTO</th>
                             <th>FECHA DE INICIO</th>
                             <th>CONOCIMIENTO</th>
                             <th>ACTITUD</th>
@@ -64,6 +65,7 @@
 
 
                                                     <td><?php echo $datosEstudiantes['username'];  ?></td>
+                                                    <td><img src="<?php echo $datosEstudiantes['photo'] ?>" width='120px' height='120px'></td>
 
                                                     <td><?php echo $datosEstudiantes['admission_date'];  ?></td>
                                                     
