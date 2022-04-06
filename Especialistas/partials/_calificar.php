@@ -22,6 +22,7 @@
     <div class="card">
         <div class="card-header">
             <h4>Estudiantes a Calificar</h4>
+            <span class="badge badge-danger">RECUERDE...SI NO CONOCE EL ESTUDIANTE POR FAVOR DEJARLO SIN VALORES Y SOLO PRESIONA CALIFICAR </span>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -56,9 +57,6 @@
                                                 
                                             }else{
                                                 
-                                            
-
-
                                         ?>
                                             <tr>
                                                 <form action="../logica/add_calification_specialist.php?student=<?php echo $datosEstudiantes['username'] ?>&nombre=<?php echo $_SESSION['name'];  ?>" method="POST" id="formulario">
