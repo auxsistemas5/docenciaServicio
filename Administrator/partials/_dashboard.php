@@ -65,6 +65,42 @@
         }
     */
         ?>
+    <div class="card bg-light">
+        <div class="card-header">
+            <h3><b>INTERACTUA CON ESTUDIANTES</b></h3>
+        </div>
+        <div class="card-body">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info form-control btn-sm" data-toggle="modal" data-target="#staticBackdrop">
+            INTERACTUA CON LOS ESTUDIANTES
+            </button>
+
+            <!-- Modal -->
+            <div class=" modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl ">
+                <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h3 class="d-flex modal-title text-white" id="staticBackdropLabel">CHAT PUBLICO</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mensajes bg-dark" id="mensajes">
+                    
+                </div>
+                <div class="modal-footer">
+                    <input type="text" name="remitente" id="remitente" value="<?php echo $_SESSION['username'];?>" hidden>
+                    <label for="" class="text-white">MENSAJE</label>
+                    <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+                    <button type="button" class="btn btn-success" id="send_message">ENVIAR</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
     
     <div class="card  bg-info">
         <div class0="">
@@ -164,6 +200,46 @@
             <div id="pie-chart-2"></div>
         </div>
     </div>
+</div>
+
+
+<div class="card col-md-12">
+    
+    <div class="card-body">
+
+        <div class="col-md-12">
+            <h5>REPORTE DE ESTUDIANTES ACTIVOS Y SERVICIOS ASIGNADOS MENSUALES</h5>
+            
+
+            <select name="mes" id="mes" class="form-control">
+                <option value="ENERO">ENERO</option>
+                <option value="FEBRERO">FEBRERO</option>
+                <option value="MARZO">MARZO</option>
+                <option value="ABRIL">ABRIL</option>
+                <option value="MAYO">MAYO</option>
+                <option value="JUNIO">JUNIO</option>
+                <option value="JULIO">JULIO</option>
+                <option value="AGOSTO">AGOSTO</option>
+                <option value="SEPTIEMBRE">SEPTIEMBRE</option>
+                <option value="OCTUBRE">OCTUBRE</option>
+                <option value="NOVIEMBRE">NOVIEMBRE</option>
+                <option value="DICIEMBRE">DICIEMBRE</option>
+            </select>
+            <button type="button" id="mostrar" class="btn btn-success btn-sm form-control">VER ESTUDIANTES</button>
+        </div>
+        <br>
+        <div class="">
+            
+            <div hidden id="char"></div>
+            <div id="grafico">
+                <div id='datos'></div> <br>
+                <div id='datos2'></div>
+            </div>
+        </div>
+        
+
+    </div>
+
 </div>
 
 

@@ -17,7 +17,7 @@
 
     echo '<pre>';
 
-    if($file = "../uploads/estudiantes/fotos/"){
+    if($file == "../uploads/estudiantes/fotos/"){
         $consulta = "INSERT INTO usuarios(username,document,password,phone,id_institucion,position,formation,email,anexo) 
                             VALUES ('$username',
                                     '$document',

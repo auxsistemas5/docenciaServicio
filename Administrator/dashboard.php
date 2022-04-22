@@ -25,6 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta name="author" content="Phoenixcoded" />
     <script language="JavaScript">
         window.history.forward();
@@ -40,6 +41,8 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/customizer.css">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
     
 
 </head>
@@ -73,9 +76,10 @@
     <script src="../assets/js/plugins/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/feather.min.js"></script>
     <script src="../assets/js/pcoded.min.js"></script>
-    <script src="../https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="../assets/js/plugins/clipboard.min.js"></script>
     <script src="../assets/js/uikit.min.js"></script>
+    
 
 <!-- Apex Chart -->
 <script src="../assets/js/plugins/apexcharts.min.js"></script>
@@ -87,3 +91,58 @@
 </body>
 
 </html>
+<script>
+
+    $(document).ready(function(){
+        setInterval( 
+            function(){
+                $('#mensajes').load('../logica/verificar_mensajes.php');
+                
+            },500
+        );
+    })
+
+    //envia el mensaje a la base de datos
+    $('#send_message').click(function(){
+        mensaje = $('#message').val();
+        remitente = $('#remitente').val();
+
+        if(mensaje != "" && remitente != ""){
+
+            datos = "mensaje="+mensaje+"&remitente="+remitente;
+            $.ajax({
+                url: '../logica/send_message.php',
+                type: 'POST',
+                data: datos,
+            })
+            .done(function(res) {
+                $('#message').val("");
+                //$('#mensajes').html(res)
+            })
+        }else{
+            alert("no se puede enviar un mensaje vacio");
+        }
+        
+    });
+    
+
+    $('#mostrar').click(function(){
+
+        $('#graficos').load('dashboard.php');
+
+        mes = $('#mes').val();
+        metadata = "mes="+mes;
+
+        $.ajax({
+            url: '../logica/graphics_students_for_months.php',
+            type: 'POST',
+            data: metadata,
+        })
+        .done(function(res) {
+            $('#char').html(res)
+        })
+
+
+    });
+
+</script>
