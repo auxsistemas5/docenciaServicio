@@ -23,47 +23,31 @@
 <div class="col-sm-12">
     
     <?php
-    /*
+        /*
         //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
         $fecha = date("Y-m-d");
-        $sqlDisabled = "SELECT usuarios.id,usuarios.state,registro.finish_date FROM registro INNER JOIN usuarios ON registro.id_user = usuarios.id 
-         WHERE usuarios.state = 1 ";
+        $update = "UPDATE usuarios set state = 0";
+        $sqlres = mysqli_query($conexion,$update);
+        if($sqlres){
+            $sqldata = "SELECT * FROM registro WHERE registro.finish_date > '$fecha' ";
+            $sqlres2 = mysqli_query($conexion,$sqldata);
 
-        $consultaDisabled = mysqli_query($conexion,$sqlDisabled);
-        $compa1 = mysqli_fetch_array($consultaDisabled);
-        $cuenta = 0;
-        if($consultaDisabled){
-            while($datesDisabled = mysqli_fetch_array($consultaDisabled)){
-                
-                if($fecha > $datesDisabled['finish_date']){
-                        $id = $datesDisabled[0];
-                        $disabled = "UPDATE usuarios SET state = 0 WHERE id = '$id' ";
-                        $consultaDis = mysqli_query($conexion,$disabled);
-        
-                        if($consultaDis){
-                            echo '<script language="javascript">Console.log("Se desabilitaron usuarios")</script>';
+            if($sqlres2){
+                while($datosUser = mysqli_fetch_array($sqlres2)){
+                    $id_user = $datosUser['id_user'];
 
-                        }
+                    $sqlUpdate = "UPDATE usuarios set state = 1 where id = $id_user ";
+                    $sqlResult = mysqli_query($conexion,$sqlUpdate);
+
+                    if($sqlResult){
+                        echo "<script>console.log('se deshabilitaron exito')</script>";
+                    }
                 }
-                $cuenta++;
-            
-
-                echo "<script language='javascript'>Console.log('Se desabilitaron usuarios '".$cuenta.")</script>"; 
             }
-
-            
-
-            
-        }else if(!$consultaDisabled){
-            echo "<div class='alert alert-success'>
-                       Sin Novedades
-                    </div>"; 
-        }else{
-            echo "<div class='alert alert-success'>
-                       Sin Novedades
-                    </div>"; 
-        }
-    */
+        }*/
+        
+        
+    
         ?>
     <div class="card bg-light">
         <div class="card-header">

@@ -66,11 +66,12 @@
 					<li class="pc-item pc-hasmenu">
 						<a href="#!" class="pc-link "><span class="pc-micon"><i data-feather="edit"></i></span><span class="pc-mtext">Evaluaciones</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
 						<ul class="pc-submenu">
-							<li class="pc-item"><a class="pc-link" href="register_seminar.php">Seminarios</a></li>
-							<li class="pc-item"><a class="pc-link" href="elaborate_questions.php">Elaborar Preguntas</a></li>
+							<li class="pc-item"><a class="pc-link" href="calificacion_docencia.php">Calificacion Docencia</a></li>
 							<li disabled  class="pc-item"><a class="pc-link" href="elaborate_exam.php">Crear Examen</a></li>
+							<li class="pc-item"><a class="pc-link" href="elaborate_questions.php">Elaborar Preguntas</a></li>
 							<li disabled  class="pc-item"><a class="pc-link" href="manage_exams.php">Gestión de Examenes	</a></li>
 							<li disabled  class="pc-item"><a class="pc-link" href="view_resultados.php">Resultados</a></li>
+							<li class="pc-item"><a class="pc-link" href="register_seminar.php">Seminarios</a></li>
 							
 							
 						</ul>

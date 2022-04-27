@@ -1,20 +1,29 @@
 <?php
     require 'conexion.php';
-    $id = $_GET['student'];
+    $student = $_GET['student'];
     $conocimiento = $_POST['conocimiento'];
     $actitud = $_POST['actitud'];
     $nombre = $_GET['nombre'];
     $seminario = $_POST['seminario'];
     $observacion = $_POST['observacion'];
+    $mes_calificado = $_POST['mes_calificado'];
 
-    $sql = "INSERT INTO calificacion_docente(docente,student,result_conocimiento,result_actitud, result_seminario, observacion) 
+    $validar = "SELECT id FROM usuarios WHERE username = '$student'";
+    $conex = mysqli_query($conexion,$validar);
+    $datosUser = mysqli_fetch_array($conex);
+
+    $id_user = $datosUser['id'];
+
+    $sql = "INSERT INTO calificacion_docente(docente,id_user,student,result_conocimiento,result_actitud, result_seminario, observacion,mes_calificado) 
     VALUES(
         '$nombre',
-        '$id',
+        '$id_user',
+        '$student',
         '$conocimiento',
         '$actitud',
         '$seminario',
-        '$observacion'
+        '$observacion',
+        '$mes_calificado'
     )";
 
     $sqlinsertar = mysqli_query($conexion,$sql);
