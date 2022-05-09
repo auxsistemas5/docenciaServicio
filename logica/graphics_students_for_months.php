@@ -1784,15 +1784,15 @@
 
 
     
-
+    
     $(function() {
         var options = {
             chart: {
                 height: 450,
                 type: 'pie',
             },
-            labels: ['CENSA','UNAC','CUR','FUMC','ITM','SENA','UCC','UDEA','UPB','FUSM','ICCT','EDESA'],
-            series: [parseInt(censa),parseInt(unimi),parseInt(cur),parseInt(fumc),parseInt(itm),parseInt(sena),parseInt(ucc),parseInt(udea),parseInt(upb),parseInt(fusm),parseInt(icct),parseInt(edesa)],
+            labels: ['URG','PED','MEI','GIN','CTR','TOX','CIR','EXU','UGP','PSI','FAC','ARC','GEH','FAR','JUR','NUT','INB','UCI','SGP','LAB','SST'],
+            series: [parseInt(urg),parseInt(ped),parseInt(mi), parseInt(gin),parseInt(cr),parseInt(tox),parseInt(cir),parseInt(exu),parseInt(urgp),parseInt(psi),parseInt(fact),parseInt(arc),parseInt(geh),parseInt(far),parseInt(jur),parseInt(nut),parseInt(inb),parseInt(uci),parseInt(sep),parseInt(lab),parseInt(sst)],
             colors: ["#7267EF", "#7993D6", "#04C8C8", "#ffa21d", "#EA4D4D",'#E3A530','#96B738','#BED679','#38B790','#389EB7','#65CAF9','#BA65F9','#F9659D'],
             legend: {
                 show: true,
@@ -1819,12 +1819,12 @@
         );
         chart.render();
     });
-
+/*
     $(function() {
             var options = {
                 chart: {
                     height: 330,
-                    type: 'bar',
+                    type: 'pie',
                 },
                 plotOptions: {
                     bar: {
@@ -1844,10 +1844,10 @@
                 },
                 series: [{
                     name: '',
-                    data: [parseInt(urg),parseInt(ped),parseInt(mi), parseInt(gin),parseInt(ped),parseInt(cr),parseInt(tox),parseInt(cir),parseInt(exu),parseInt(urgp),parseInt(psi),parseInt(fact),parseInt(arc),parseInt(geh),parseInt(far),parseInt(jur),parseInt(nut),parseInt(inb),parseInt(uci),parseInt(sep),parseInt(lab),parseInt(sst)]
+                    data: [parseInt(urg),parseInt(ped),parseInt(mi), parseInt(gin),parseInt(cr),parseInt(tox),parseInt(cir),parseInt(exu),parseInt(urgp),parseInt(psi),parseInt(fact),parseInt(arc),parseInt(geh),parseInt(far),parseInt(jur),parseInt(nut),parseInt(inb),parseInt(uci),parseInt(sep),parseInt(lab),parseInt(sst)]
                 }],
                 xaxis: {
-                    categories: ['URG','PED','MEI','GIN','PED','CTR','TOX','CIR','EXU','UGP','PSI','FAC','ARC','GEH','FAR','JUR','NUT','INB','UCI','SGP','LAB','SST'],
+                    categories: ['URG','PED','MEI','GIN','CTR','TOX','CIR','EXU','UGP','PSI','FAC','ARC','GEH','FAR','JUR','NUT','INB','UCI','SGP','LAB','SST'],
                 },
                 yaxis: {
                     title: {
@@ -1871,6 +1871,6 @@
                 options
             );
             chart.render();
-        });
+        });*/
 </script>
 

@@ -23,7 +23,7 @@
 <div class="col-sm-12">
     
     <?php
-        /*
+        
         //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
         $fecha = date("Y-m-d");
         $update = "UPDATE usuarios set state = 0";
@@ -44,7 +44,7 @@
                     }
                 }
             }
-        }*/
+        }
         
         
     
@@ -192,7 +192,7 @@
     <div class="card-body">
 
         <div class="col-md-12">
-            <h5>REPORTE DE ESTUDIANTES ACTIVOS Y SERVICIOS ASIGNADOS MENSUALES</h5>
+            <h5>ROTACION DE ESTUDIANTES MENSUAL POR SERVICIO</h5>
             
 
             <select name="mes" id="mes" class="form-control">

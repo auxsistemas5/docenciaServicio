@@ -144,4 +144,12 @@
     $(document).ready( function () {
         $('#table-maestros').DataTable();
     } );
+
+    $(document).ready( function () {
+        $('#table-maestros-1').DataTable();
+    } );
+
+    $(document).ready( function () {
+        $('#table-maestros-2').DataTable();
+    } );
 </script>

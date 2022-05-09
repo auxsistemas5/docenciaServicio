@@ -19,8 +19,8 @@
                         <select name="type_vinc" id="" class="form-control">
                             <option value="">NINGUNO</option>
                             <option value="AGREMIACIÓN/PROSALUD">AGREMIACIÓN/PROSALUD</option>
-                            <option value="AGREMIACIÓN/PROENSALUD">AGREMIACIÓN/PROENSALUD</option>
-                            <option value="AGREMIACIÓN/THAUS">AGREMIACIÓN/THAUS</option>
+                            <option value="AGREMIACIÓN/PROENSALUD ">AGREMIACIÓN/PROENSALUD</option>
+                            <option value="AGREMIACIÓN/TAHUS">AGREMIACIÓN/TAHUS</option>
                             <option value="VINCULADO HMFS">VINCULADO HMFS</option>
                             <option value="EXTERNO IES">EXTERNO IE'S</option>
                             <option value="ASESOR">ASESOR</option>

@@ -108,23 +108,23 @@
                             if($dates['type_vinc'] == 'AGREMIACIÓN/PROENSALUD'){
                                 $type1 = $dates['type_vinc'];
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/THAUS";
+                                $type3 = "AGREMIACIÓN/TAHUS";
                                 $type4 = "VINCULADO HMFS";
                                 $type5 = "EXTERNO IES";
                                 $type6 = "ASESOR";
                                 
                             }else if($dates['type_vinc'] == 'AGREMIACIÓN/PROSALUD'){
                                 $type1 = $dates['type_vinc'];
-                                $type2 = "AGREMIACIÓN/PROENSALUD'";
-                                $type3 = "AGREMIACIÓN/THAUS";
+                                $type2 = "AGREMIACIÓN/PROENSALUD";
+                                $type3 = "AGREMIACIÓN/TAHUS";
                                 $type4 = "VINCULADO HMFS";
                                 $type5 = "EXTERNO IES";
                                 $type6 = "ASESOR";
 
-                            }else if($dates['type_vinc'] == 'AGREMIACIÓN/THAUS'){
+                            }else if($dates['type_vinc'] == 'AGREMIACIÓN/TAHUS'){
                                 $type1 = $dates['type_vinc'];
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/PROENSALUD'";
+                                $type3 = "AGREMIACIÓN/PROENSALUD";
                                 $type4 = "VINCULADO HMFS";
                                 $type5 = "EXTERNO IES";
                                 $type6 = "ASESOR";
@@ -132,30 +132,30 @@
                             }else if($dates['type_vinc'] == 'VINCULADO HMFS'){
                                 $type1 = $dates['type_vinc'];
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/THAUS";
-                                $type4 = "AGREMIACIÓN/PROENSALUD'";
+                                $type3 = "AGREMIACIÓN/TAHUS";
+                                $type4 = "AGREMIACIÓN/PROENSALUD";
                                 $type5 = "EXTERNO IES";
                                 $type6 = "ASESOR";
 
                             }else if($dates['type_vinc'] == 'EXTERNO IES'){
                                 $type1 = $dates['type_vinc'];
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/THAUS";
+                                $type3 = "AGREMIACIÓN/TAHUS";
                                 $type4 = "VINCULADO HMFS";
-                                $type5 = "AGREMIACIÓN/PROENSALUD'";
+                                $type5 = "AGREMIACIÓN/PROENSALUD";
                                 $type6 = "ASESOR";
 
                             }else if($dates['type_vinc'] == 'ASESOR'){
                                 $type1 = $dates['type_vinc'];
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/THAUS";
+                                $type3 = "AGREMIACIÓN/TAHUS";
                                 $type4 = "VINCULADO HMFS";
                                 $type5 = "EXTERNO IES";
-                                $type6 = "AGREMIACIÓN/PROENSALUD'";
+                                $type6 = "AGREMIACIÓN/PROENSALUD";
                             }else{
                                 $type1 = "AGREMIACIÓN/PROENSALUD'";
                                 $type2 = "AGREMIACIÓN/PROSALUD";
-                                $type3 = "AGREMIACIÓN/THAUS";
+                                $type3 = "AGREMIACIÓN/TAHUS";
                                 $type4 = "VINCULADO HMFS";
                                 $type5 = "EXTERNO IES";
                                 $type6 = "ASESOR";

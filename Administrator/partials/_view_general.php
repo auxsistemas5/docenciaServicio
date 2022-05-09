@@ -59,7 +59,7 @@
                 <div class="mt-3 table-responsive">
                     <?php require '../logica/conexion.php'; ?>
                         <?php 
-                            $queryD = "SELECT usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON usuarios.id_institucion = instituciones.id WHERE usuarios.state = 0 ";
+                            $queryD = "SELECT usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON instituciones.id = usuarios.id_institucion WHERE usuarios.state = 0 ";
                             $validarUsersDisabled = mysqli_query($conexion, $queryD);
                             
                         ?>
