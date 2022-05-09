@@ -71,6 +71,7 @@
 							<li class="pc-item"><a class="pc-link" href="elaborate_questions.php">Elaborar Preguntas</a></li>
 							<li disabled  class="pc-item"><a class="pc-link" href="manage_exams.php">Gestión de Examenes	</a></li>
 							<li disabled  class="pc-item"><a class="pc-link" href="view_resultados.php">Resultados</a></li>
+							<li disabled  class="pc-item"><a class="pc-link" href="one_result.php">Resultado Individual</a></li>
 							<li class="pc-item"><a class="pc-link" href="register_seminar.php">Seminarios</a></li>
 							
 							
