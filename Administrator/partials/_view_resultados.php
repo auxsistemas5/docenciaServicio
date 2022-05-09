@@ -95,7 +95,7 @@
 
                                     if($consultaResultado){
                                         while($mostrarResultados = mysqli_fetch_array($consultaResultado)){
-                                            if($mostrarResultados['result_conocimiento'] != "" ){
+                                            if($mostrarResultados['result_conocimiento'] != "" or $mostrarResultados['result_actitud'] != "" or $mostrarResultados['result_seminario'] != "" ){
                                     
                                 ?>
                                 <tr>
