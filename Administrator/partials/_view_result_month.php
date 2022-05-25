@@ -58,26 +58,33 @@
             $contador++;
         
         }
-        $docencia = mysqli_fetch_array($verificarDoc);
-        if($docencia > 0){
-            $resultDoc = $docencia['result_seminario'];
-        }else{
-            $resultDoc= "NO CALIFICADO";
-        }
         
         if($conocimiento == 0){$conocimiento = "NO CALIFICADO";}
         if($actitud ==0){$actitud = "NO CALIFICADO";}
         if($seminario == 0){$seminario = "NO CALIFICADO";}
-
+        
         if($con > 1){$conocimiento = $conocimiento / $con;}
         if($act > 1){$actitud = $actitud / $act;}
         if($semi > 1){$seminario = $seminario / $semi;}
 
+        $docencia = mysqli_fetch_array($verificarDoc);
+        if($docencia > 0){
+            $resultDoc = $docencia['result_seminario'];
+            $seminario = floatval($seminario) + $resultDoc;
+            $seminario = $seminario / 2;
+        }else{
+            $resultDoc= "NO CALIFICADO";
+        }
+
+        $total = $seminario + $actitud + $conocimiento;
+        $total = $total / 3;
+
+
         ?>
         <td aling="center"><?php echo $conocimiento//." - ".$con?></td>
         <td aling="center"><?php echo $actitud//." - ".$act?></td>
-        <td aling="center"><?php echo $seminario//." - ".$semi?></td>
-        <td><?php echo $resultDoc ?></td>
+        <td aling="center"><?php echo $seminario //." - ".$semi?></td>
+        <td><?php echo number_format($total,2,".") ?></td>
          </tr>
         <?php
 

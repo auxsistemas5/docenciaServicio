@@ -248,7 +248,7 @@
                                 <TH>CONOCIMIENTO</TH>
                                 <TH>ACTITUD</TH>
                                 <TH>SEMINARIO</TH>
-                                <th>CALIFICACION DOCENCIA</th>
+                                <th>RESULTADO TOTAL</th>
                             </tr>
                         </thead>
                         <tbody>
