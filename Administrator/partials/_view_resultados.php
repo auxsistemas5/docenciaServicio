@@ -230,6 +230,37 @@
                 </div>
             </div>
         </div>
+        <?php
+            
+
+        ?>
+        <div class="card container">
+            <div class="card-header">
+                <h3>RESULTADOS PONDERADOS</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    <table style="text-align:center;" class="table" id="resultados">
+                        <thead>
+                            <tr>
+                                <TH>INTERNO</TH>
+                                <TH>CONOCIMIENTO</TH>
+                                <TH>ACTITUD</TH>
+                                <TH>SEMINARIO</TH>
+                                <th>CALIFICACION DOCENCIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <?php
+                                require '_view_result_month.php'
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

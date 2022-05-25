@@ -154,6 +154,10 @@
     $(document).ready( function () {
         $('#table-maestros-2').DataTable();
     } );
+    $(document).ready( function () {
+        $('#resultados').DataTable();
+    } );
+
 
     
 </script>
