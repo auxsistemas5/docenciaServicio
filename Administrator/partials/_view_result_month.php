@@ -18,7 +18,7 @@
         FROM calificacion_docente WHERE student = '$student'  
         AND (calificacion_docente.result_conocimiento IS NOT NULL OR 
         calificacion_docente.result_actitud IS NOT NULL 
-        OR calificacion_docente.result_seminario IS NOT NULL );";
+        OR calificacion_docente.result_seminario IS NOT NULL )AND calificacion_docente.mes_calificado BETWEEN '2022-03-01' AND '2022-03-31'";
 
         $consultarDocencia = "SELECT result_seminario from calificacion_docencia where student = '$student' ";
 
