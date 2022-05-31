@@ -140,6 +140,7 @@
                                     <th>ACTITUD</th>
                                     <th>SEMINARIO</th>
                                     <th>OBSERVACIONES</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -238,27 +239,52 @@
             <div class="card-header">
                 <h3>RESULTADOS PONDERADOS</h3>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
+            <div class="card-body"> <br>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#march" role="tab" aria-controls="march" aria-selected="true">MARZO</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#april" role="tab" aria-controls="april" aria-selected="false">ABRIL</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#may" role="tab" aria-controls="may" aria-selected="false">MAYO</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#jun" role="tab" aria-controls="jun" aria-selected="false">JUNIO</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <br>
+                    <div class="tab-pane fade show active" id="march" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="table-responsive">
 
-                    <table style="text-align:center;" class="table" id="resultados">
-                        <thead>
-                            <tr>
-                                <TH>INTERNO</TH>
-                                <TH>CONOCIMIENTO</TH>
-                                <TH>ACTITUD</TH>
-                                <TH>SEMINARIO</TH>
-                                <th>RESULTADO TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-    
-                            <?php
-                                require '_view_result_month.php'
-                            ?>
-                        </tbody>
-                    </table>
+                <table style="text-align:center;" class="table" id="resultados">
+                    <thead>
+                        <tr>
+                            <TH>INTERNO</TH>
+                            <th>FECHA</th>
+                            <TH>CONOCIMIENTO</TH>
+                            <TH>ACTITUD</TH>
+                            <TH>SEMINARIO</TH>
+                            <th>RESULTADO TOTAL</th>
+                            <th>GENERAR CERTIFICADO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                            require '_view_result_month.php'
+                        ?>
+                    </tbody>
+                </table>
+</div>
+                    </div>
+                    <div class="tab-pane fade" id="april" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                    <div class="tab-pane fade" id="may" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    <div class="tab-pane fade" id="jun" role="tabpanel" aria-labelledby="contact-tab">...</div>
                 </div>
+                
             </div>
         </div>
     </div>
