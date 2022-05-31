@@ -1,7 +1,7 @@
 <?php   
     require '../logica/conexion.php';
 
-    $sql = "SELECT registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,usuarios.email, usuarios.photo,registro.finish_date,servicios.services_name FROM registro INNER JOIN usuarios ON usuarios.id = registro.id_user INNER JOIN servicios ON servicios.id = registro.id_service WHERE usuarios.position = 'INTERNO' AND registro.anulated = 0 AND registro.finish_date BETWEEN '2022-03-01' AND '2022-03-31' ORDER BY registro.admission_date";
+    $sql = "SELECT registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,usuarios.email, usuarios.photo,registro.finish_date,servicios.services_name FROM registro INNER JOIN usuarios ON usuarios.id = registro.id_user INNER JOIN servicios ON servicios.id = registro.id_service WHERE usuarios.position = 'INTERNO' AND registro.anulated = 0 AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31' ORDER BY registro.admission_date";
 
     $sqlver = mysqli_query($conexion,$sql);
 

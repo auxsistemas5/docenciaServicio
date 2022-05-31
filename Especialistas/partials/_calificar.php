@@ -15,14 +15,14 @@
 
     if($servicio == 'PREHOSPITALIZACIÓN'){
         $sqlEstudiantesPorEspecialista = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
-        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'MEDICINA INTERNA' AND registro.finish_date BETWEEN '2022-03-01' AND '2022-03-31'   ORDER BY registro.admission_date";
+        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'MEDICINA INTERNA' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'   ORDER BY registro.admission_date";
 
         $sqlEstudiantesPorEspecialista1 = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
-        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'CIRUGÍA' AND registro.finish_date BETWEEN '2022-03-01' AND '2022-03-31'   ORDER BY registro.admission_date";
+        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'CIRUGÍA' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'   ORDER BY registro.admission_date";
     }else{
 
         $sqlEstudiantesPorEspecialista = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
-        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0  AND servicios.services_name = '$servicio' AND registro.finish_date BETWEEN '2022-03-01' AND '2022-03-31'  ORDER BY registro.admission_date";
+        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0  AND servicios.services_name = '$servicio' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'  ORDER BY registro.admission_date";
     }
 
     /*
