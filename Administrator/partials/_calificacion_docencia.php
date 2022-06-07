@@ -1,7 +1,7 @@
 <?php   
     require '../logica/conexion.php';
 
-    $sql = "SELECT registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,usuarios.email, usuarios.photo,registro.finish_date,servicios.services_name FROM registro INNER JOIN usuarios ON usuarios.id = registro.id_user INNER JOIN servicios ON servicios.id = registro.id_service WHERE usuarios.position = 'INTERNO' AND registro.anulated = 0 AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31' ORDER BY registro.admission_date";
+    $sql = "SELECT registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,usuarios.email, usuarios.photo,registro.finish_date,servicios.services_name FROM registro INNER JOIN usuarios ON usuarios.id = registro.id_user INNER JOIN servicios ON servicios.id = registro.id_service WHERE usuarios.position = 'INTERNO' AND registro.anulated = 0 AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-30' ORDER BY registro.admission_date";
 
     $sqlver = mysqli_query($conexion,$sql);
 
@@ -33,7 +33,7 @@
                             while($datos = mysqli_fetch_array($sqlver)){
                                 $id = $datos['id'];
                                 $fechaFn = $datos['finish_date'];
-                                $sqlRevisarResultados = "SELECT id_user FROM calificacion_docencia WHERE id_user = '$id' "; 
+                                $sqlRevisarResultados = "SELECT id_user,mes_calificado FROM calificacion_docencia WHERE id_user = '$id' and mes_calificado = '$fechaFn'  "; 
                                 $result = mysqli_query($conexion,$sqlRevisarResultados);
                                 $persona = mysqli_fetch_array($result);
                                 if($persona > 0 ){

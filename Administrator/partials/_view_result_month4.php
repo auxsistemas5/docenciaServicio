@@ -1,9 +1,8 @@
-
 <?php   
   require '../logica/conexion.php';
 
 
-  $sql = "SELECT * FROM calificacion_docente where (calificacion_docente.mes_calificado BETWEEN '2022-03-01' AND '2022-03-31') AND (result_conocimiento != '' or result_actitud != '' or result_seminario != '') group by student ";
+  $sql = "SELECT * FROM calificacion_docente where (calificacion_docente.mes_calificado BETWEEN '2022-04-01' AND '2022-04-30') AND (result_conocimiento != '' or result_actitud != '' or result_seminario != '') group by student";
   $verificar = mysqli_query($conexion, $sql);
 
     while($estudiantes = mysqli_fetch_array($verificar)){
@@ -15,7 +14,7 @@
         $student = $estudiantes['student'];
 
         $consultarValores = "SELECT calificacion_docente.result_conocimiento,calificacion_docente.result_actitud,calificacion_docente.result_seminario ,calificacion_docente.mes_calificado
-        FROM calificacion_docente WHERE calificacion_docente.mes_calificado BETWEEN '2022-03-01' AND '2022-03-31' AND student = '$student'  
+        FROM calificacion_docente WHERE calificacion_docente.mes_calificado BETWEEN '2022-04-01' AND '2022-04-30' AND student = '$student'  
         AND (calificacion_docente.result_conocimiento IS NOT NULL OR 
         calificacion_docente.result_actitud IS NOT NULL 
         OR calificacion_docente.result_seminario IS NOT NULL )";
@@ -48,7 +47,7 @@
                 
             }
 
-            if($notas['result_seminario'] != NULL){
+            if($notas['result_seminario'] != NULL OR $notas['result_seminario'] != ''){
                $seminario = $seminario + $notas['result_seminario'];
                $semi ++;
             }else{
@@ -70,13 +69,15 @@
 
         $docencia = mysqli_fetch_array($verificarDoc);
         if($docencia > 0){
-            if($docencia['result_seminario'] != NULL){
+            $resultDoc = $docencia['result_seminario'];
+            if($resultDoc == NULL){
 
-                $resultDoc = $docencia['result_seminario'];
+                
+                $seminario = $seminario;
+            }else{
+
                 $seminario = floatval($seminario) + $resultDoc;
                 $seminario = $seminario / 2;
-            }else{
-                $seminario = $seminario;
             }
         }else{
             $resultDoc= "NO CALIFICADO";
@@ -91,6 +92,7 @@
         <td aling="center"><?php echo $actitud//." - ".$act?></td>
         <td aling="center"><?php echo $seminario //." - ".$semi?></td>
         <td><?php echo number_format($total,2,".") ?></td>
+
         <td><a href="../logica/create_pdf_for_final_results.php?name=<?php echo $student?>&conocimiento=<?php echo $conocimiento?>&actitud=<?php echo $actitud?>&seminario=<?php echo $seminario ?>&fecha=<?php echo $fecha ?>" target="_blank"  class="btn btn-info btn-sm">RESULTADOS</a></td>
          </tr>
         <?php
