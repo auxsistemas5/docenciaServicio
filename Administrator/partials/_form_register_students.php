@@ -10,11 +10,11 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="" class="form-label">Nombre Completo:</label>
-                                            <input id="nombre" type="text" class="form-control" placeholder="" name="username"  >
+                                            <input id="nombre" type="text" class="form-control" placeholder="" name="username"  required>
                                         </div>
                                         <div class=" col-md-3">
                                             <label for="" class="form-label">Documento:</label>
-                                            <input type="text" class="form-control" name="document" id="documento">
+                                            <input type="text" class="form-control" name="document" id="documento" required>
                                         </div>
                                         <div class="col-md-3">
                                             <label for="">Foto</label>
@@ -25,7 +25,7 @@
 
                                         <div class="col-12 col-md-5">
                                            <label for="" class="form-label">Correo:</label>
-                                            <input id="correo" type="text" class="form-control" name="email">
+                                            <input id="correo" type="text" class="form-control" name="email" required>
 
                                         </div>
                                         
