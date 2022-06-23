@@ -138,7 +138,7 @@
                     <tbody>
                         <?php
                                 if($sqlConsultaEstudiante1){
-                                    while($datosEstudiantes = mysqli_fetch_array($sqlConsultaEstudiante1)){
+                                    while($datosEstudiantes = mysqli_fetch_array($sqlConsultaEstudiante)){
                                             $nombre = $_SESSION['name'];
                                             $estudiante = $datosEstudiantes['username'];
                                             //verifica si ya se le califico al estudiante

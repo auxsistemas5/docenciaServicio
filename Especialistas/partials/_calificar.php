@@ -13,12 +13,11 @@
     $fechaActual = date('m');
 
 
-    if($servicio == 'PREHOSPITALIZACIÓN'){
+    if($servicio == 'URGENCIAS PEDIÁTRICAS'){
         $sqlEstudiantesPorEspecialista = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
-        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'MEDICINA INTERNA' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'   ORDER BY registro.admission_date";
+        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'PEDIATRÍA' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'   ORDER BY registro.admission_date";
 
-        $sqlEstudiantesPorEspecialista1 = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
-        FROM registro INNER JOIN programas ON programas.id = registro.id_program INNER JOIN servicios ON servicios.id = registro.id_service INNER JOIN usuarios ON usuarios.id = registro.id_user WHERE  usuarios.position = 'INTERNO' AND registro.anulated = 0 AND servicios.services_name = 'CIRUGÍA' AND registro.finish_date BETWEEN '2022-04-01' AND '2022-04-31'   ORDER BY registro.admission_date";
+        
     }else{
 
         $sqlEstudiantesPorEspecialista = "SELECT registro.id,servicios.services_name,registro.admission_date,usuarios.id,usuarios.username,usuarios.document,usuarios.phone,usuarios.position,programas.programs_name,usuarios.email, usuarios.photo,registro.finish_date
@@ -74,10 +73,9 @@
     
 
 
-    if($servicio == 'PREHOSPITALIZACIÓN'){
+    if($servicio == 'URGENCIAS PEDIÁTRICAS'){
         $sqlConsultaEstudiante = mysqli_query($conexion,$sqlEstudiantesPorEspecialista);
-        $sqlConsultaEstudiante1 = mysqli_query($conexion,$sqlEstudiantesPorEspecialista1);
-        require '_calificar_prehospitalizacion.php';
+        require '_calificar_student.php';
     }else{
         $sqlConsultaEstudiante = mysqli_query($conexion,$sqlEstudiantesPorEspecialista);
         require '_calificar_student.php';
