@@ -2,8 +2,9 @@
 
     require 'conexion.php';
 
-    $id = $_POST['id'];
-
+    $id = $_GET['id'];
+    ECHO $id;
+    
     $sql = "DELETE FROM instituciones_contacto WHERE id = '$id'";
     $res = mysqli_query($conexion,$sql);
 

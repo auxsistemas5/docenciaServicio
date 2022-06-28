@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <form action="../logica/delete_contact_institution.php" method="POST">
+                        <div action="" method="POST">
                             <?php 
                             while($dates = mysqli_fetch_array($res1)){
                             ?> 
@@ -32,7 +32,7 @@
                                 <td><?php echo $dates['position']?></td>
                                 <td><?php echo $dates['phone']?></td>
                                 <td><?php echo $dates['email']?></td>
-                                <td><button class="btn btn-danger"><i data-feather="trash-2"></button></td>
+                                <td><a class="btn btn-danger" href="../logica/delete_contact_institution.php?id=<?php echo $dates['id']?>"><i data-feather="trash-2"></a></td>
                             <?php
                             }
                             ?>
