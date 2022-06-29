@@ -157,6 +157,9 @@
     $(document).ready( function () {
         $('#resultados').DataTable();
     } );
+    $(document).ready( function () {
+        $('#resultados1').DataTable();
+    } );
 
 
     

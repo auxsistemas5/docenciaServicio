@@ -19,10 +19,11 @@
     echo $actitud."<br>";
     echo $seminario;*/
 
-    $sqlInstitucion = "SELECT usuarios.id, instituciones.name,usuarios.document FROM usuarios INNER JOIN instituciones on usuarios.id_institucion = instituciones.id where usuarios.username = '$name' ";
+    $sqlInstitucion = "SELECT usuarios.id, instituciones.name,usuarios.document,usuarios.photo FROM usuarios INNER JOIN instituciones on usuarios.id_institucion = instituciones.id where usuarios.username = '$name' ";
 
     $sqlverificarInstitucion = mysqli_query($conexion, $sqlInstitucion);
     $institucion = mysqli_fetch_array($sqlverificarInstitucion);
+    $imagen = $institucion['photo'];
     $id_user = $institucion['id'];
 
     $sqlRegistro = "SELECT * FROM registro where registro.finish_date = '$fecha' and registro.id_user = '$id_user' ";
@@ -59,6 +60,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
+    
 
     <!-- Favicon icon -->
     
@@ -98,18 +100,33 @@
             <TR align="CENTER">
                 <td><B>ELABORÓ: </B> DOCENCIA SERVICIO</td>
             </TR>
+            
         </tbody>
     </table>
 
-    <br>
+    
 
     <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td ROWSPAN="3"><img src="<?php echo $imagen ?>" width="120px" height="120px"></td>
+                    <td><b>Nombre Completo:</b> <?php echo $name ?></td>   
+                </tr>
+                <tr>
+                    <td><b>Documento de Identidad:</b> <?php echo $institucion['document'] ?> </td>
+                </tr>
+                <tr>
+
+                    <td><b>Institución Educativa: </b> <?php echo $institucion['name'] ?></td> 
+                </tr>
+                
+            </tbody>
+        </table>
+    
         <p><b>Fecha Inicio: </b> <?php echo $registro['admission_date'] ?> </p>
         <p><b>Fecha Finalización:</b> <?php echo $fecha ?></p>
         <p><b>Servicio:</b> <?php echo $nombreServicio['services_name'] ?></p> 
-        <p><b>Nombre Completo:</b> <?php echo $name ?></p>
-        <p><b>Documento de Identidad:</b> <?php echo $institucion['document'] ?> </p>
-        <p><b>Institución Educativa: </b> <?php echo $institucion['name'] ?></p> <br>
 
         <table border="1" style="border-collapse: collapse; align-items: center;">
             <thead>
@@ -150,17 +167,14 @@
                     <td align="CENTER">Especialista del Servicio</td>
                     
                 </tr>
-                <tr>
-                    <td><B>CUMPLIMIENTO DE LA NORMA:</B> Reglamento de prácticas, políticas instituciones</td>
-                    <td align="CENTER"><b>10%</b></td>
-                    <td></td>
-                    <td align="CENTER">Jefe del Servicio</td>
-                    
-                </tr>
+                <?php  
+                    $resultado1 = $conocimiento + $seminario + $actitud ;
+                    $resultado2 = $resultado1 / 3;
+                ?>
                 <tr>
                     <td align="CENTER"><b>NOTA FINAL</b></td>
                     <td align="center"><b>100%</b></td>
-                    <td></td>
+                    <td align="center"><b><?php echo number_format($resultado2,2,".") ?></b></td>
                     <td></td>
                     
                 </tr>
@@ -169,12 +183,12 @@
         <br>
         <p>OBSERVACIONES: _________________________________________________________________________</p>
         <p>___________________________________________________________________________________________</p>
-        <p>___________________________________________________________________________________________</p>
+        
 
         <br>
         
 
-        <p><img src="../resources/firma.jpeg" width="300px" height="120px"></p>
+        <p><img src="../resources/firma.jpeg" width="280px" height="90px"></p>
         
         
         

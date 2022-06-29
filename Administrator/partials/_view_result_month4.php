@@ -88,9 +88,9 @@
 
 
         ?>
-        <td aling="center"><?php echo $conocimiento//." - ".$con?></td>
-        <td aling="center"><?php echo $actitud//." - ".$act?></td>
-        <td aling="center"><?php echo $seminario //." - ".$semi?></td>
+        <td aling="center"><?php echo number_format($conocimiento,2,".")//." - ".$con?></td>
+        <td aling="center"><?php echo number_format($actitud,2,".")//." - ".$act?></td>
+        <td aling="center"><?php echo number_format($seminario,2,".") //." - ".$semi?></td>
         <td><?php echo number_format($total,2,".") ?></td>
 
         <td><a href="../logica/create_pdf_for_final_results.php?name=<?php echo $student?>&conocimiento=<?php echo $conocimiento?>&actitud=<?php echo $actitud?>&seminario=<?php echo $seminario ?>&fecha=<?php echo $fecha ?>" target="_blank"  class="btn btn-info btn-sm">RESULTADOS</a></td>

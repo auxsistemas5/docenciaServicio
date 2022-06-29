@@ -282,25 +282,25 @@
                     <div class="tab-pane fade" id="april" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="table-responsive">
 
-<table style="text-align:center;" class="table" id="resultados">
-    <thead>
-        <tr>
-            <TH>INTERNO</TH>
-            <TH>CONOCIMIENTO</TH>
-            <TH>ACTITUD</TH>
-            <TH>SEMINARIO</TH>
-            <th>RESULTADO TOTAL</th>
-            <th>GENERAR CERTIFICADO</th>
-        </tr>
-    </thead>
-    <tbody>
+        <table style="text-align:center;" class="table" id="resultados1">
+            <thead>
+                <tr>
+                    <TH>INTERNO</TH>
+                    <TH>CONOCIMIENTO</TH>
+                    <TH>ACTITUD</TH>
+                    <TH>SEMINARIO</TH>
+                    <th>RESULTADO TOTAL</th>
+                    <th>GENERAR CERTIFICADO</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <?php
-           // require '_view_result_month4.php'
-        ?>
-    </tbody>
-</table>
-</div>
+                <?php
+                require '_view_result_month4.php'
+                ?>
+            </tbody>
+        </table>
+        </div>
     </div>
                     </div>
                     <div class="tab-pane fade" id="may" role="tabpanel" aria-labelledby="contact-tab">...</div>
