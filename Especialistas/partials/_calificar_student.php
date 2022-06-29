@@ -22,12 +22,13 @@
                     </thead>
                     <tbody>
                         <?php
+                        
                                 if($sqlConsultaEstudiante){
                                     while($datosEstudiantes = mysqli_fetch_array($sqlConsultaEstudiante)){
                                             $nombre = $_SESSION['name'];
                                             $estudiante = $datosEstudiantes['username'];
                                             //verifica si ya se le califico al estudiante
-                                            $sqlRevisarResultados = "SELECT id FROM calificacion_docente WHERE  (student = '$estudiante') AND (docente = '$nombre')";
+                                            $sqlRevisarResultados = "SELECT id FROM calificacion_docente WHERE  (student = '$estudiante') AND (docente = '$nombre') AND (mes_calificado = '2022-05-30')";
 
                                             $sqlBuscarCalificacion = mysqli_query($conexion,$sqlRevisarResultados);
 

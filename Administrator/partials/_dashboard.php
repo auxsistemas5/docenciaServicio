@@ -25,6 +25,7 @@
     <?php
         
         //desabilita los estudiantes segun la fecha de finalizacion del ultimo registro
+        /*
         $fecha = date("Y-m-d");
         $update = "UPDATE usuarios set state = 0";
         $sqlres = mysqli_query($conexion,$update);
@@ -45,6 +46,7 @@
                 }
             }
         }
+        */
         
         
     

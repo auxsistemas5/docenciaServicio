@@ -102,7 +102,7 @@
             </TR>
             
         </tbody>
-    </table>
+    </table> <br>
 
     
 
@@ -110,24 +110,29 @@
         <table>
             <tbody>
                 <tr>
-                    <td ROWSPAN="3"><img src="<?php echo $imagen ?>" width="120px" height="120px"></td>
+                    <td ><img src="<?php echo $imagen ?>" width="120px" height="130px"></td>
+                    <td ROWSPAN="6">    </td>
                     <td><b>Nombre Completo:</b> <?php echo $name ?></td>   
                 </tr>
                 <tr>
                     <td><b>Documento de Identidad:</b> <?php echo $institucion['document'] ?> </td>
                 </tr>
                 <tr>
-
                     <td><b>Institución Educativa: </b> <?php echo $institucion['name'] ?></td> 
+                </tr>
+                <tr>
+                    <td><b>Fecha Inicio: </b> <?php echo $registro['admission_date'] ?> </td>
+                </tr>
+                <tr>
+                    <td><b>Fecha Finalización:</b> <?php echo $fecha ?></td>
+                </tr>
+                <tr>
+                    <td><b>Servicio:</b> <?php echo $nombreServicio['services_name'] ?></td>
                 </tr>
                 
             </tbody>
-        </table>
+        </table> <br>
     
-        <p><b>Fecha Inicio: </b> <?php echo $registro['admission_date'] ?> </p>
-        <p><b>Fecha Finalización:</b> <?php echo $fecha ?></p>
-        <p><b>Servicio:</b> <?php echo $nombreServicio['services_name'] ?></p> 
-
         <table border="1" style="border-collapse: collapse; align-items: center;">
             <thead>
                 <tr >
@@ -149,21 +154,21 @@
                 <tr>
                     <td><B>CONOCIMIENTOS:</B> Capacidad de análisis, evaluación en rondas, profundidad y saberes académicos </td>
                     <td align="CENTER"><B>25%</B></td>
-                    <td align="center"><?php echo $conocimiento ?></td>
+                    <td align="center"><?php echo number_format($conocimiento,2,".") ?></td>
                     <td align="CENTER">Especialista del Servicio</td>
                     
                 </tr>
                 <tr>
                     <td><b>ACTIVIDADES ACADÉMICAS:</b> Participación y desarrollo de seminarios,charlas, capacitaciones,actualizaciones, etc.</td>
                     <td align="CENTER"><B>20%</B></td>
-                    <td align="center"><?php echo $seminario ?></td>
+                    <td align="center"><?php echo number_format($seminario,2,".") ?></td>
                     <td align="CENTER">Docencia Servicio</td>
                     
                 </tr>
                 <tr>
                     <td><b>ACTITUD:</b> Trato humanizado, comunicación asertiva, interacción con el personal asistencial</td>
                     <td align="CENTER"><B>15%</B></td>
-                    <td align="center"><?php echo $actitud ?></td>
+                    <td align="center"><?php echo number_format($actitud,2,".") ?></td>
                     <td align="CENTER">Especialista del Servicio</td>
                     
                 </tr>
