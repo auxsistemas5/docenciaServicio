@@ -16,6 +16,8 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>ESTUDIANTE</th>
+                            <th>DOCUMENTO</th>
                             <th>DOCENTE</th>
                             <th>MES CALIFICADO</th>
                             <th>CONOCIMIENTO</th>

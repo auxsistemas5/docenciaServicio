@@ -110,8 +110,8 @@
         <table>
             <tbody>
                 <tr>
-                    <td ><img src="<?php echo $imagen ?>" width="120px" height="130px"></td>
-                    <td ROWSPAN="6">    </td>
+                    <td ROWSPAN="6"><img src="<?php echo $imagen ?>" width="120px" height="130px"></td>
+                    
                     <td><b>Nombre Completo:</b> <?php echo $name ?></td>   
                 </tr>
                 <tr>
@@ -154,21 +154,21 @@
                 <tr>
                     <td><B>CONOCIMIENTOS:</B> Capacidad de análisis, evaluación en rondas, profundidad y saberes académicos </td>
                     <td align="CENTER"><B>25%</B></td>
-                    <td align="center"><?php echo number_format($conocimiento,2,".") ?></td>
-                    <td align="CENTER">Especialista del Servicio</td>
+                    <td align="center"><?php echo number_format($conocimiento,1,".") ?></td>
+                    <td align="CENTER">Especialista </td>
                     
                 </tr>
                 <tr>
                     <td><b>ACTIVIDADES ACADÉMICAS:</b> Participación y desarrollo de seminarios,charlas, capacitaciones,actualizaciones, etc.</td>
                     <td align="CENTER"><B>20%</B></td>
-                    <td align="center"><?php echo number_format($seminario,2,".") ?></td>
-                    <td align="CENTER">Docencia Servicio</td>
+                    <td align="center"><?php echo number_format($seminario,1,".") ?></td>
+                    <td align="CENTER">Especialistas y Docencia </td>
                     
                 </tr>
                 <tr>
                     <td><b>ACTITUD:</b> Trato humanizado, comunicación asertiva, interacción con el personal asistencial</td>
                     <td align="CENTER"><B>15%</B></td>
-                    <td align="center"><?php echo number_format($actitud,2,".") ?></td>
+                    <td align="center"><?php echo number_format($actitud,1,".") ?></td>
                     <td align="CENTER">Especialista del Servicio</td>
                     
                 </tr>
@@ -179,7 +179,7 @@
                 <tr>
                     <td align="CENTER"><b>NOTA FINAL</b></td>
                     <td align="center"><b>100%</b></td>
-                    <td align="center"><b><?php echo number_format($resultado2,2,".") ?></b></td>
+                    <td align="center"><b><?php echo number_format($resultado2,1,".") ?></b></td>
                     <td></td>
                     
                 </tr>
@@ -193,7 +193,7 @@
         <br>
         
 
-        <p><img src="../resources/firma.jpeg" width="280px" height="90px"></p>
+        <p><img src="../resources/firma.jpeg" width="250px" height="90px"></p>
         
         
         

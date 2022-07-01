@@ -59,7 +59,7 @@
                 <div class="mt-3 table-responsive">
                     <?php require '../logica/conexion.php'; ?>
                         <?php 
-                            $queryD = "SELECT usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON instituciones.id = usuarios.id_institucion WHERE usuarios.state = 0 ";
+                            $queryD = "SELECT usuarios.id, usuarios.username,usuarios.document, usuarios.formation, usuarios.position,usuarios.email, instituciones.acronym FROM usuarios INNER JOIN instituciones ON instituciones.id = usuarios.id_institucion WHERE usuarios.state = 0 ";
                             $validarUsersDisabled = mysqli_query($conexion, $queryD);
                             
                         ?>
@@ -74,6 +74,7 @@
                                         <th>CARGO</th>
                                         <th>CORREO</th>
                                         <th>INSTITUCIÓN</th>
+                                        <th>ACCION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -85,6 +86,7 @@
                                         <td><?php echo $datosUsuariosDisabled['position'] ?></td>
                                         <td><?php echo $datosUsuariosDisabled['email'] ?></td>
                                         <td><?php echo $datosUsuariosDisabled['acronym'] ?></td>
+                                        <td><a href="view_details_student.php?id=<?php echo $datosUsuariosDisabled['id'] ?>" class="btn btn-success btn-sm">VER</a></td>
 
                                     </tr>
                                     <?php
